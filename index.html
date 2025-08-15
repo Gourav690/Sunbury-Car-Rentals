@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sunbury - Car Rental Service</title>
+    <title>Sunbury Rentals - Find Your Perfect Rental Car and Ride Share</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -12,86 +13,63 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Inter', sans-serif;
             line-height: 1.6;
-            color: #2D3436;
-            background: #FFFFFF;
+            color: #1a1a1a;
+            background: #ffffff;
         }
 
-        header {
-            background: linear-gradient(135deg, #7f73e0 0%, #A29BFE 100%);
-            color: white;
-            padding: 1.2rem 0;
+        /* Header */
+        .header {
+            background: #ffffff;
+            padding: 1rem 0;
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 4px 30px rgba(108,92,231,0.2);
-            backdrop-filter: blur(15px);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+            border-bottom: 1px solid #f0f0f0;
         }
 
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+        .nav-container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
         .logo {
             font-size: 1.8rem;
-            font-weight: 600;
-            letter-spacing: -0.5px;
+            font-weight: 700;
+            color: #2563eb;
+            text-decoration: none;
         }
 
         .nav-links {
             display: flex;
             list-style: none;
-            gap: 2.5rem;
+            gap: 2rem;
         }
 
         .nav-links a {
-            color: white;
+            color: #374151;
             text-decoration: none;
-            transition: all 0.3s ease;
-            padding: 0.5rem 1.2rem;
-            border-radius: 25px;
             font-weight: 500;
-            position: relative;
-        }
-
-        .nav-links a::before {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            width: 0;
-            height: 2px;
-            background: #00B894;
-            transition: all 0.3s ease;
-            transform: translateX(-50%);
-        }
-
-        .nav-links a:hover::before {
-            width: 80%;
+            transition: color 0.3s ease;
         }
 
         .nav-links a:hover {
-            color: #00B894;
+            color: #2563eb;
         }
 
+        /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, #1c1a27 0%, #2d3a3d 100%),
-                        radial-gradient(circle at 20% 80%, rgba(0,184,148,0.3) 0%, transparent 50%),
-                        radial-gradient(circle at 80% 20%, rgba(162,155,254,0.3) 0%, transparent 50%);
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
             color: white;
-            background-size: cover;
+            padding: 120px 0 80px;
+            text-align: center;
             position: relative;
             overflow: hidden;
         }
@@ -103,72 +81,121 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
-            opacity: 0.3;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="40" r="1.5" fill="rgba(255,255,255,0.08)"/><circle cx="40" cy="80" r="2.5" fill="rgba(255,255,255,0.06)"/></svg>');
+            animation: float 20s ease-in-out infinite;
         }
 
         .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 2rem;
             position: relative;
             z-index: 2;
-            max-width: 800px;
-            padding: 0 2rem;
         }
 
-        .hero-content h1 {
-            font-size: 4.5rem;
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
             margin-bottom: 1.5rem;
-            animation: fadeInUp 1s ease;
-            font-weight: 300;
-            letter-spacing: -2px;
             line-height: 1.1;
         }
 
-        .hero-content p {
-            font-size: 1.3rem;
-            margin-bottom: 2.5rem;
-            animation: fadeInUp 1s ease 0.2s both;
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
             opacity: 0.9;
-            font-weight: 300;
         }
 
-        .btn {
-            background: linear-gradient(135deg, #00B894 0%, #00A085 100%);
-            color: white;
-            padding: 16px 40px;
-            border: none;
+        .award-badge {
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+            padding: 0.75rem 1.5rem;
             border-radius: 50px;
-            cursor: pointer;
-            font-size: 1.1rem;
-            text-decoration: none;
+            margin-bottom: 3rem;
             display: inline-block;
-            transition: all 0.4s ease;
-            animation: fadeInUp 1s ease 0.4s both;
             font-weight: 500;
-            letter-spacing: 0.5px;
-            box-shadow: 0 10px 30px rgba(0,184,148,0.3);
+        }
+
+        /* Search Form */
+        .search-section {
+            background: white;
+            padding: 3rem 0;
+            margin-top: -60px;
             position: relative;
-            overflow: hidden;
+            z-index: 100;
         }
 
-        .btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-            transition: left 0.6s ease;
+        .search-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 2rem;
         }
 
-        .btn:hover::before {
-            left: 100%;
+        .search-form {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+            border: 1px solid #e5e7eb;
         }
 
-        .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(0,184,148,0.4);
-            background: linear-gradient(135deg, #00A085 0%, #00B894 100%);
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr auto;
+            gap: 1.5rem;
+            align-items: end;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            font-weight: 600;
+            color: #374151;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .form-group input,
+        .form-group select {
+            padding: 12px 16px;
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #2563eb;
+            box-shadow: 0 0 0 3px rgba(37,99,235,0.1);
+        }
+
+        .search-btn {
+            background: #2563eb;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            height: fit-content;
+        }
+
+        .search-btn:hover {
+            background: #1d4ed8;
+            transform: translateY(-1px);
+        }
+
+        /* Features Section */
+        .features {
+            padding: 4rem 0;
+            background: #f8fafc;
         }
 
         .container {
@@ -177,57 +204,131 @@
             padding: 0 2rem;
         }
 
-        .section {
-            padding: 5rem 0;
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+            margin-top: 2rem;
         }
 
-        .section h2 {
+        .feature-card {
             text-align: center;
-            font-size: 3rem;
-            margin-bottom: 4rem;
-            color: #2D3436;
-            font-weight: 300;
-            letter-spacing: -1px;
-            position: relative;
+            padding: 2rem;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
         }
 
-        .section h2::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background: #dbeafe;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #1f2937;
+        }
+
+        .feature-card p {
+            color: #6b7280;
+            line-height: 1.6;
+        }
+
+        /* Fleet Section */
+        .fleet {
+            padding: 5rem 0;
+            background: white;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #1f2937;
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: #6b7280;
+            font-size: 1.1rem;
+            margin-bottom: 3rem;
+        }
+
+        .fleet-categories {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .category-card {
+            text-align: center;
+            padding: 2rem 1rem;
+            border: 2px solid #e5e7eb;
+            border-radius: 16px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .category-card:hover,
+        .category-card.active {
+            border-color: #2563eb;
+            background: #f8fafc;
+        }
+
+        .category-icon {
             width: 60px;
-            height: 3px;
-            background: linear-gradient(135deg, #6C5CE7, #00B894);
-            border-radius: 2px;
+            height: 60px;
+            background: #dbeafe;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-size: 1.5rem;
+        }
+
+        .category-card h3 {
+            font-weight: 600;
+            color: #1f2937;
         }
 
         .cars-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            grid-template-rows: repeat(2, 1fr);
-            gap: 3rem;
-            margin-top: 3rem;
+            gap: 2rem;
         }
 
         .car-card {
             background: white;
-            border-radius: 20px;
+            border-radius: 16px;
             overflow: hidden;
-            box-shadow: 0 15px 50px rgba(45,52,54,0.08);
-            transition: all 0.4s ease;
-            border: 1px solid #F1F2F6;
-            position: relative;
+            border: 1px solid #e5e7eb;
+            transition: all 0.3s ease;
         }
 
         .car-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 25px 80px rgba(108,92,231,0.15);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            transform: translateY(-5px);
         }
 
         .car-image {
-            height: 240px;
+            height: 200px;
             position: relative;
             overflow: hidden;
         }
@@ -236,181 +337,203 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            object-position: center;
             transition: transform 0.3s ease;
         }
 
-        .car-image:hover img {
+        .car-card:hover .car-image img {
             transform: scale(1.05);
         }
 
-        .car-category {
+        .car-category-badge {
             position: absolute;
-            top: 15px;
-            left: 15px;
-            background: rgba(0, 0, 0, 0.8);
+            top: 12px;
+            left: 12px;
+            background: rgba(37,99,235,0.9);
             color: white;
-            padding: 0.5rem 1rem;
+            padding: 0.25rem 0.75rem;
             border-radius: 20px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            backdrop-filter: blur(10px);
-        }
-
-        .car-info {
-            padding: 2.5rem;
-        }
-
-        .car-info h3 {
-            color: #2D3436;
-            margin-bottom: 1rem;
-            font-size: 1.5rem;
+            font-size: 0.8rem;
             font-weight: 500;
         }
 
-        .car-price {
-            font-size: 2rem;
-            color: #00B894;
+        .car-info {
+            padding: 1.5rem;
+        }
+
+        .car-info h3 {
+            font-size: 1.25rem;
             font-weight: 600;
-            margin: 1.5rem 0;
-            letter-spacing: -0.5px;
+            color: #1f2937;
+            margin-bottom: 0.5rem;
+        }
+
+        .car-price {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #2563eb;
+            margin-bottom: 1rem;
         }
 
         .car-features {
             list-style: none;
-            margin: 1.5rem 0;
+            margin-bottom: 1.5rem;
         }
 
         .car-features li {
-            padding: 0.5rem 0;
-            color: #636E72;
-            font-weight: 400;
-            border-bottom: 1px solid #F8F9FA;
+            padding: 0.25rem 0;
+            color: #6b7280;
+            font-size: 0.9rem;
             display: flex;
             align-items: center;
-        }
-
-        .car-features li:last-child {
-            border-bottom: none;
         }
 
         .car-features li::before {
             content: '✓';
-            color: #00B894;
+            color: #10b981;
             font-weight: bold;
-            margin-right: 0.8rem;
-            font-size: 1.1rem;
+            margin-right: 0.5rem;
         }
 
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 3rem;
-            margin-top: 3rem;
+        .reserve-btn {
+            width: 100%;
+            background: #2563eb;
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
         }
 
-        .service-card {
+        .reserve-btn:hover {
+            background: #1d4ed8;
+        }
+
+        /* Locations Section */
+        .locations {
+            padding: 4rem 0;
+            background: #f8fafc;
+        }
+
+        .location-content {
             text-align: center;
-            padding: 3rem 2rem;
-            border-radius: 20px;
-            background: white;
-            box-shadow: 0 15px 50px rgba(45,52,54,0.08);
-            transition: all 0.4s ease;
-            border: 1px solid #F1F2F6;
-            position: relative;
+            max-width: 600px;
+            margin: 0 auto;
         }
 
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 25px 80px rgba(108,92,231,0.12);
+        .location-content h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #1f2937;
+            margin-bottom: 1rem;
         }
 
-        .service-icon {
-            width: 100px;
-            height: 100px;
-            margin: 0 auto 2rem;
-            background: linear-gradient(135deg, #6C5CE7 0%, #00B894 100%);
-            border-radius: 50%;
+        .location-content p {
+            color: #6b7280;
+            margin-bottom: 2rem;
+        }
+
+        .location-map {
+            background: #e5e7eb;
+            height: 300px;
+            border-radius: 16px;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
-            font-size: 2.5rem;
-            box-shadow: 0 15px 40px rgba(108,92,231,0.2);
-            position: relative;
-        }
-
-        .service-icon::before {
-            content: '';
-            position: absolute;
-            top: -2px;
-            left: -2px;
-            right: -2px;
-            bottom: -2px;
-            background: linear-gradient(135deg, #6C5CE7, #00B894, #A29BFE);
-            border-radius: 50%;
-            z-index: -1;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .service-card:hover .service-icon::before {
-            opacity: 1;
-        }
-
-        .service-card h3 {
-            color: #2D3436;
-            margin-bottom: 1.2rem;
-            font-size: 1.4rem;
-            font-weight: 500;
-            letter-spacing: -0.3px;
-        }
-
-        .service-card p {
-            color: #636E72;
-            line-height: 1.7;
-            font-weight: 400;
-        }
-
-        footer {
-            background: linear-gradient(135deg, #2D3436 0%, #636E72 100%);
-            color: white;
-            text-align: center;
-            padding: 4rem 0;
-            position: relative;
-        }
-
-        footer::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, #6C5CE7, #00B894, transparent);
-        }
-
-        footer h3 {
-            margin-bottom: 2rem;
-            font-size: 1.6rem;
-            font-weight: 400;
-        }
-
-        footer p {
-            margin: 0.8rem 0;
+            color: #6b7280;
             font-size: 1.1rem;
-            opacity: 0.9;
         }
 
-        .mobile-menu {
-            display: none;
-            cursor: pointer;
+        /* Footer */
+        .footer {
+            background: #1f2937;
+            color: white;
+            padding: 3rem 0 2rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            text-align: center;
+        }
+
+        .footer h3 {
             font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
         }
 
-        /* Clean animations */
+        .footer p {
+            margin: 0.5rem 0;
+            color: #d1d5db;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #374151;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            color: #9ca3af;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .form-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 1rem;
+            }
+
+            .search-btn {
+                grid-column: span 2;
+            }
+
+            .fleet-categories {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .cars-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .search-btn {
+                grid-column: span 1;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .fleet-categories {
+                grid-template-columns: 1fr;
+            }
+
+            .cars-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Animations */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-10px) rotate(2deg); }
+        }
+
         @keyframes fadeInUp {
             from {
                 opacity: 0;
@@ -422,200 +545,148 @@
             }
         }
 
-        @keyframes float {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-5px) rotate(2deg); }
+        .car-card,
+        .feature-card,
+        .category-card {
+            animation: fadeInUp 0.6s ease forwards;
         }
 
-        @keyframes slideIn {
-            from {
-                opacity: 0;
-                transform: translateX(-30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        /* Enhanced section styling */
-        #cars {
-            background: linear-gradient(135deg, #FAFBFC 0%, #F1F2F6 100%);
-            position: relative;
-        }
-
-        #cars::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, #6C5CE7, transparent);
-        }
-
-        #services {
-            background: white;
-            position: relative;
-        }
-
-        /* Responsive design */
-        @media (max-width: 1024px) {
-            .cars-grid {
-                grid-template-columns: repeat(2, 1fr);
-                grid-template-rows: repeat(3, 1fr);
-            }
-        }
-
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-            
-            .mobile-menu {
-                display: block;
-            }
-            
-            .hero-content h1 {
-                font-size: 3rem;
-                letter-spacing: -1px;
-            }
-            
-            .hero-content p {
-                font-size: 1.1rem;
-            }
-
-            .cars-grid {
-                grid-template-columns: 1fr;
-                grid-template-rows: repeat(6, 1fr);
-                gap: 2rem;
-            }
-
-            .services-grid {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .hero-content h1 {
-                font-size: 2.5rem;
-            }
-            
-            .container {
-                padding: 0 1rem;
-            }
-
-            .section {
-                padding: 3rem 0;
-            }
-        }
-
-        /* Staggered animations */
-        .car-card:nth-child(1) { animation: slideIn 0.8s ease 0.1s both; }
-        .car-card:nth-child(2) { animation: fadeInUp 0.8s ease 0.3s both; }
-        .car-card:nth-child(3) { animation: slideIn 0.8s ease 0.5s both; }
-        .car-card:nth-child(4) { animation: slideIn 0.8s ease 0.1s both; }
-        .car-card:nth-child(5) { animation: fadeInUp 0.8s ease 0.3s both; }
-        .car-card:nth-child(6) { animation: slideIn 0.8s ease 0.5s both; }
-
-        .service-card:nth-child(1) { animation: fadeInUp 0.6s ease 0.1s both; }
-        .service-card:nth-child(2) { animation: fadeInUp 0.6s ease 0.2s both; }
-        .service-card:nth-child(3) { animation: fadeInUp 0.6s ease 0.3s both; }
-        .service-card:nth-child(4) { animation: fadeInUp 0.6s ease 0.4s both; }
-
-        /* Minimalist focus states */
-        .btn:focus,
-        input:focus,
-        select:focus {
-            box-shadow: 0 0 0 3px rgba(108,92,231,0.2);
-        }
+        .car-card:nth-child(1) { animation-delay: 0.1s; }
+        .car-card:nth-child(2) { animation-delay: 0.2s; }
+        .car-card:nth-child(3) { animation-delay: 0.3s; }
+        .car-card:nth-child(4) { animation-delay: 0.4s; }
+        .car-card:nth-child(5) { animation-delay: 0.5s; }
+        .car-card:nth-child(6) { animation-delay: 0.6s; }
     </style>
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="logo">SUNBURY Car Rentals</div>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#cars">Fleet</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <div class="mobile-menu">☰</div>
-        </nav>
+    <!-- Header -->
+    <header class="header">
+        <div class="nav-container">
+            <a href="#" class="logo">Sunbury Car Rentals</a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#fleet">Fleet</a></li>
+                    <li><a href="#locations">Locations</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
+    <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-content">
-            <h1>Premium Car Rentals for Ride Share and Daily use</h1>
-            <p>Experience seamless mobility with our curated fleet of premium vehicles in Sunbury</p>
-            <a href="#cars" class="btn">View Collection</a>
+            <div class="award-badge">Melbourne’s full of surprises — every street hides a story, every corner a discovery</div>
+            <h1>Find Your Perfect Rental Car</h1>
+            <p>Premium vehicles for ride share drivers and daily use in Sunbury and greater Melbourne</p>
         </div>
     </section>
 
-    <section id="cars" class="section">
+    <!-- Search Section -->
+    <section class="search-section">
+        <div class="search-container">
+            <form class="search-form">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="pickup-location">Pickup Location</label>
+                        <select id="pickup-location">
+                            <option value="">Select Location</option>
+                            <option value="sunbury">Sunbury - Jackson Road</option>
+                            <option value="melbourne-cbd">Melbourne CBD</option>
+                            <option value="airport">Melbourne Airport</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="pickup-date">Pickup Date</label>
+                        <input type="date" id="pickup-date">
+                    </div>
+                    <div class="form-group">
+                        <label for="return-date">Return Date</label>
+                        <input type="date" id="return-date">
+                    </div>
+                    <div class="form-group">
+                        <label for="pickup-time">Pickup Time</label>
+                        <input type="time" id="pickup-time" value="10:00">
+                    </div>
+                    <button type="submit" class="search-btn">Search Cars</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
         <div class="container">
-            <h2>Our Fleet</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🛡️</div>
+                    <h3>Insurance Protection</h3>
+                    <p>Protect yourself against theft, accidents, and collisions with comprehensive coverage options.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">❌</div>
+                    <h3>Stress Free Cancellations</h3>
+                    <p>Flexible cancellation options for when your plans change. No hidden fees or penalties.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎧</div>
+                    <h3>24/7 Support</h3>
+                    <p>Get instant help and easy replacements anytime with our round-the-clock customer service.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fleet Section -->
+    <section id="fleet" class="fleet">
+        <div class="container">
+            <h2 class="section-title">Our Cars</h2>
+            <p class="section-subtitle">We offer a wide range of vehicles at the best value</p>
+            
+            <div class="fleet-categories">
+                <div class="category-card active" data-category="economy">
+                    <div class="category-icon">🚗</div>
+                    <h3>Economy</h3>
+                </div>
+                <div class="category-card" data-category="suv">
+                    <div class="category-icon">🚙</div>
+                    <h3>SUV</h3>
+                </div>
+                <div class="category-card" data-category="luxury">
+                    <div class="category-icon">✨</div>
+                    <h3>Luxury</h3>
+                </div>
+                <div class="category-card" data-category="van">
+                    <div class="category-icon">🚐</div>
+                    <h3>Van</h3>
+                </div>
+            </div>
+
             <div class="cars-grid">
                 <div class="car-card">
                     <div class="car-image">
                         <img src="images/honda-civic.jpg" alt="Honda Civic">
-                        <div class="car-category">Economy</div>
+                        <div class="car-category-badge">Economy</div>
                     </div>
                     <div class="car-info">
                         <h3>Honda Civic</h3>
-                        <div class="car-price">$65/day</div>
+                        <div class="car-price">$55/day</div>
                         <ul class="car-features">
                             <li>5 Passengers</li>
                             <li>Climate Control</li>
                             <li>Automatic Transmission</li>
                             <li>Fuel Efficient</li>
                         </ul>
-                        <button class="btn" onclick="bookCar('Honda Civic')">Reserve</button>
-                    </div>
-                </div>
-
-                <div class="car-card">
-                    <div class="car-image">
-                        <img src="images/ford-kuga.jpg" alt="Ford Kuga">
-                        <div class="car-category">Family SUV</div>
-                    </div>
-                    <div class="car-info">
-                        <h3>Ford Kuga</h3>
-                        <div class="car-price">$45/day</div>
-                        <ul class="car-features">
-                            <li>7 Passengers</li>
-                            <li>All-Wheel Drive</li>
-                            <li>Premium Safety</li>
-                            <li>Spacious Interior</li>
-                        </ul>
-                        <button class="btn" onclick="bookCar('Ford Kuga')">Reserve</button>
-                    </div>
-                </div>
-
-                <div class="car-card">
-                    <div class="car-image">
-                        <img src="images/bmw-3-series.jpg" alt="BMW 3 Series">
-                        <div class="car-category">Executive</div>
-                    </div>
-                    <div class="car-info">
-                        <h3>BMW 3 Series</h3>
-                        <div class="car-price">$95/day</div>
-                        <ul class="car-features">
-                            <li>Premium Leather</li>
-                            <li>Navigation System</li>
-                            <li>Sport Package</li>
-                            <li>Premium Audio</li>
-                        </ul>
-                        <button class="btn" onclick="bookCar('BMW 3 Series')">Reserve</button>
+                        <button class="reserve-btn" onclick="bookCar('Honda Civic')">Reserve Now</button>
                     </div>
                 </div>
 
                 <div class="car-card">
                     <div class="car-image">
                         <img src="images/toyota-corolla.jpg" alt="Toyota Corolla">
-                        <div class="car-category">Compact</div>
+                        <div class="car-category-badge">Economy</div>
                     </div>
                     <div class="car-info">
                         <h3>Toyota Corolla</h3>
@@ -626,14 +697,32 @@
                             <li>Bluetooth Connectivity</li>
                             <li>Safety Features</li>
                         </ul>
-                        <button class="btn" onclick="bookCar('Toyota Corolla')">Reserve</button>
+                        <button class="reserve-btn" onclick="bookCar('Toyota Corolla')">Reserve Now</button>
+                    </div>
+                </div>
+
+                <div class="car-card">
+                    <div class="car-image">
+                        <img src="images/ford-kuga.jpg" alt="Ford Kuga">
+                        <div class="car-category-badge">SUV</div>
+                    </div>
+                    <div class="car-info">
+                        <h3>Ford Kuga</h3>
+                        <div class="car-price">$75/day</div>
+                        <ul class="car-features">
+                            <li>7 Passengers</li>
+                            <li>All-Wheel Drive</li>
+                            <li>Premium Safety</li>
+                            <li>Spacious Interior</li>
+                        </ul>
+                        <button class="reserve-btn" onclick="bookCar('Ford Kuga')">Reserve Now</button>
                     </div>
                 </div>
 
                 <div class="car-card">
                     <div class="car-image">
                         <img src="images/audi-q7.jpg" alt="Audi Q7">
-                        <div class="car-category">Luxury SUV</div>
+                        <div class="car-category-badge">Luxury SUV</div>
                     </div>
                     <div class="car-info">
                         <h3>Audi Q7</h3>
@@ -644,14 +733,32 @@
                             <li>Premium Interior</li>
                             <li>Advanced Tech</li>
                         </ul>
-                        <button class="btn" onclick="bookCar('Audi Q7')">Reserve</button>
+                        <button class="reserve-btn" onclick="bookCar('Audi Q7')">Reserve Now</button>
+                    </div>
+                </div>
+
+                <div class="car-card">
+                    <div class="car-image">
+                        <img src="images/bmw-3-series.jpg" alt="BMW 3 Series">
+                        <div class="car-category-badge">Executive</div>
+                    </div>
+                    <div class="car-info">
+                        <h3>BMW 3 Series</h3>
+                        <div class="car-price">$95/day</div>
+                        <ul class="car-features">
+                            <li>Premium Leather</li>
+                            <li>Navigation System</li>
+                            <li>Sport Package</li>
+                            <li>Premium Audio</li>
+                        </ul>
+                        <button class="reserve-btn" onclick="bookCar('BMW 3 Series')">Reserve Now</button>
                     </div>
                 </div>
 
                 <div class="car-card">
                     <div class="car-image">
                         <img src="images/ford-mustang.jpg" alt="Ford Mustang">
-                        <div class="car-category">Sports Car</div>
+                        <div class="car-category-badge">Sports Car</div>
                     </div>
                     <div class="car-info">
                         <h3>Ford Mustang</h3>
@@ -662,57 +769,115 @@
                             <li>Sport Suspension</li>
                             <li>Premium Sound</li>
                         </ul>
-                        <button class="btn" onclick="bookCar('Ford Mustang')">Reserve</button>
+                        <button class="reserve-btn" onclick="bookCar('Ford Mustang')">Reserve Now</button>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="services" class="section">
+    <!-- Locations Section -->
+    <section id="locations" class="locations">
         <div class="container">
-            <h2>Why Choose Us</h2>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">🛡️</div>
-                    <h3>Full Coverage</h3>
-                    <p>Comprehensive insurance protection with flexible excess options for complete peace of mind during your rental.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">🚚</div>
-                    <h3>Free Delivery</h3>
-                    <p>Complimentary vehicle delivery throughout Sunbury and greater Melbourne metropolitan area.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">⏰</div>
-                    <h3>24/7 Support</h3>
-                    <p>Round-the-clock roadside assistance and customer service support whenever you need it.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">💎</div>
-                    <h3>Premium Service</h3>
-                    <p>Meticulously maintained vehicles with professional service that exceeds expectations.</p>
-                </div>
+            <div class="location-content">
+                <h2>Find us in Sunbury & Melbourne</h2>
+                <p>Conveniently located to serve Sunbury and the greater Melbourne metropolitan area with premium car rental services.</p>
+                 <div class="location-map">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d50513.89473165414!2d144.69692654863278!3d-37.57841037948089!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad65d4dd5c5bf91%3A0x5045675218ce840!2sSunbury%20VIC%203429%2C%20Australia!5e0!3m2!1sen!2sus!4v1635123456789!5m2!1sen!2sus" 
+                    width="100%" 
+                    height="400" 
+                    style="border:0; border-radius: 16px;" 
+                    allowfullscreen="" 
+                    loading="lazy">
+                </iframe>
             </div>
         </div>
     </section>
 
-    <footer id="contact">
-        <div class="container">
-            <h3>Contact Sunbury Car Rentals</h3>
+    <!-- Footer -->
+    <footer id="contact" class="footer">
+        <div class="footer-content">
+            <h3>Contact Sunbury Rentals</h3>
             <p>📞 +61 430 410 450</p>
             <p>📧 reservations@sunburycarrentals.com.au</p>
             <p>📍 Jackson Road, Sunbury VIC 3429</p>
-            <p style="margin-top: 2rem; opacity: 0.7;">&copy; 2025 Sunbury Car Rental. All rights reserved.</p>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Sunbury Rentals. All rights reserved. ABN 83 88 06 61 989</p>
+            </div>
         </div>
     </footer>
 
     <script>
+        // Set minimum dates
+        const today = new Date().toISOString().split('T')[0];
+        document.getElementById('pickup-date').min = today;
+        document.getElementById('return-date').min = today;
+
+        // Update return date when pickup changes
+        document.getElementById('pickup-date').addEventListener('change', function() {
+            document.getElementById('return-date').min = this.value;
+        });
+
+        // Search form handling
+        document.querySelector('.search-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const pickupLocation = document.getElementById('pickup-location').value;
+            const pickupDate = document.getElementById('pickup-date').value;
+            const returnDate = document.getElementById('return-date').value;
+            
+            if (!pickupLocation || !pickupDate || !returnDate) {
+                alert('Please fill in all required fields to search for available vehicles.');
+                return;
+            }
+            
+            if (new Date(returnDate) <= new Date(pickupDate)) {
+                alert('Return date must be after pickup date.');
+                return;
+            }
+            
+            const days = Math.ceil((new Date(returnDate) - new Date(pickupDate)) / (1000 * 60 * 60 * 24));
+            alert(`🔍 Searching available vehicles...\n\nDuration: ${days} day${days > 1 ? 's' : ''}\nLocation: ${pickupLocation.replace('-', ' ')}\n\nAvailable cars will be displayed below.`);
+        });
+
+        // Category filtering
+        document.querySelectorAll('.category-card').forEach(card => {
+            card.addEventListener('click', function() {
+                document.querySelectorAll('.category-card').forEach(c => c.classList.remove('active'));
+                this.classList.add('active');
+                
+                const category = this.dataset.category;
+                alert(`Filtering cars by category: ${category.charAt(0).toUpperCase() + category.slice(1)}`);
+            });
+        });
+
+        // Book car function
         function bookCar(carModel) {
-            alert(`🚗 ${carModel} selected for reservation!\n\nNext steps:\n• Check availability\n• Customer details\n• Payment processing\n\nYou'll be redirected to our secure booking system.`);
+            const pickupDate = document.getElementById('pickup-date').value;
+            const returnDate = document.getElementById('return-date').value;
+            
+            if (!pickupDate || !returnDate) {
+                alert(`${carModel} selected! Please complete the search form above to check availability and pricing.`);
+                document.getElementById('pickup-date').focus();
+                return;
+            }
+            
+            const days = Math.ceil((new Date(returnDate) - new Date(pickupDate)) / (1000 * 60 * 60 * 24));
+            const prices = {
+                'Honda Civic': 55,
+                'Toyota Corolla': 45,
+                'Ford Kuga': 75,
+                'Audi Q7': 120,
+                'BMW 3 Series': 95,
+                'Ford Mustang': 85
+            };
+            const total = prices[carModel] * days;
+            
+            alert(`🚗 ${carModel} - Reservation Details\n\nDuration: ${days} day${days > 1 ? 's' : ''}\nDaily Rate: $${prices[carModel]}\nEstimated Total: $${total}\n\nClick OK to proceed to secure checkout.`);
         }
 
-        // Smooth scrolling for navigation links
+        // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -726,12 +891,7 @@
             });
         });
 
-        // Enhanced mobile menu toggle
-        document.querySelector('.mobile-menu').addEventListener('click', function() {
-            alert('📱 Mobile Navigation\n\n• Quick Booking\n• Fleet Overview\n• Contact Info\n• Service Areas\n\n(Full mobile menu would slide out here)');
-        });
-
-        // Add scroll-triggered animations
+        // Animation on scroll
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
@@ -740,26 +900,5 @@
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.style.animationPlayState = 'running';
+                    entry.target.classList.add('fadeInUp');
                 }
-            });
-        }, observerOptions);
-
-        // Observe all animated elements
-        document.addEventListener('DOMContentLoaded', function() {
-            document.querySelectorAll('.car-card, .service-card').forEach(el => {
-                observer.observe(el);
-            });
-        });
-
-        // Add subtle parallax effect
-        window.addEventListener('scroll', function() {
-            const scrolled = window.pageYOffset;
-            const hero = document.querySelector('.hero');
-            if (hero) {
-                hero.style.transform = `translateY(${scrolled * 0.2}px)`;
-            }
-        });
-    </script>
-</body>
-</html>
