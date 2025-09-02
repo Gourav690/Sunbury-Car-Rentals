@@ -1,1 +1,4 @@
-sunburyrentals.au
+Type: CNAME
+Host: www
+Target: gourav690.github.io
+TTL: 3600
