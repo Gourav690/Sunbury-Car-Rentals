@@ -1,11 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Basic Meta -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sunbury Rentals | Affordable Car Hire in Sunbury &amp; Melbourne</title>
+
+    <meta name="description" content="Sunbury Rentals offers affordable weekly car rentals, rideshare-ready vehicles and commercial vans in Sunbury and across Melbourne. Local Sunbury business with fully serviced cars from $160/week.">
+    <meta name="keywords" content="car rental Sunbury, car hire Sunbury, weekly car hire Melbourne, rideshare car rental Melbourne, Uber rental Sunbury, DiDi rental, delivery van hire Melbourne">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Social -->
+    <!-- TODO: Replace https://your-domain.com/ with your live domain -->
+    <meta property="og:title" content="Sunbury Rentals | Affordable Car Hire in Sunbury &amp; Melbourne">
+    <meta property="og:description" content="Local Sunbury-based car rentals, rideshare-ready vehicles and commercial vans from $160/week.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://your-domain.com/">
+    <meta property="og:image" content="https://your-domain.com/images/sunbury-logo.png">
+    <meta property="og:locale" content="en_AU">
+
+    <!-- Canonical -->
+    <!-- TODO: Replace https://your-domain.com/ with your live domain -->
+    <link rel="canonical" href="https://your-domain.com/">
+
+    <!-- Favicon & Fonts -->
     <link rel="icon" type="image/png" href="images/favicon.png">
-    <title>Sunbury Rentals - Premium Car Rental Experience</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Local Business Schema -->
+    <!-- TODO: Update URL / image if your domain or logo path differs -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CarRental",
+      "name": "Sunbury Rentals",
+      "image": "https://your-domain.com/images/sunbury-logo.png",
+      "@id": "https://your-domain.com/",
+      "url": "https://your-domain.com/",
+      "telephone": "+61 430 410 450",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Jackson Road",
+        "addressLocality": "Sunbury",
+        "addressRegion": "VIC",
+        "postalCode": "3429",
+        "addressCountry": "AU"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": -37.579,
+        "longitude": 144.726
+      },
+      "openingHoursSpecification": [{
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"
+        ],
+        "opens": "08:00",
+        "closes": "20:00"
+      }],
+      "sameAs": [
+        "https://www.facebook.com/share/1Ln69bzKkg/?mibextid=wwXIfr",
+        "https://www.instagram.com/sunbury_rentals?igsh=MWU0YW9rNDV4YnI0bQ%3D%3D&utm_source=qr"
+      ]
+    }
+    </script>
+
     <style>
         * {
             margin: 0;
@@ -14,817 +75,985 @@
         }
 
         :root {
-            --primary: #6366f1;
-            --primary-dark: #4338ca;
-            --secondary: #ec4899;
-            --accent: #14b8a6;
-            --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            --gradient-2: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-            --gradient-3: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-            --dark: #0f172a;
-            --dark-light: #1e293b;
-            --glass: rgba(255, 255, 255, 0.1);
-            --glass-border: rgba(255, 255, 255, 0.2);
+            --primary: #0055c8;        /* Brand blue */
+            --primary-dark: #003f96;
+            --text-main: #111827;      /* Black-ish */
+            --text-muted: #6b7280;
+            --bg-body: #ffffff;
+            --bg-soft: #f3f4f6;
+            --border-soft: #e5e7eb;
+            --radius-lg: 18px;
+            --shadow-soft: 0 12px 35px rgba(15, 23, 42, 0.08);
+            --gradient-1: linear-gradient(135deg, #1d4ed8, #1e3a8a);
         }
 
         body {
             font-family: 'Inter', sans-serif;
-            background: #0f172a;
-            color: #ffffff;
-            overflow-x: hidden;
+            background: var(--bg-body);
+            color: var(--text-main);
             line-height: 1.6;
+            overflow-x: hidden;
         }
 
-        /* Animated Background */
-        .animated-bg {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            overflow: hidden;
+        a {
+            color: inherit;
         }
 
-        .floating-shapes {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-        }
-
-        .shape {
-            position: absolute;
-            border-radius: 50%;
-            filter: blur(1px);
-            animation: float-shapes 20s ease-in-out infinite;
-        }
-
-        .shape:nth-child(1) {
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(45deg, #6366f1, #8b5cf6);
-            top: 20%;
-            left: 10%;
-            animation-delay: 0s;
-        }
-
-        .shape:nth-child(2) {
-            width: 120px;
-            height: 120px;
-            background: linear-gradient(45deg, #ec4899, #f97316);
-            top: 70%;
-            left: 80%;
-            animation-delay: -7s;
-        }
-
-        .shape:nth-child(3) {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(45deg, #14b8a6, #06b6d4);
-            top: 40%;
-            right: 20%;
-            animation-delay: -14s;
-        }
-
-        @keyframes float-shapes {
-            0%, 100% { transform: translateY(0px) translateX(0px) rotate(0deg); }
-            25% { transform: translateY(-20px) translateX(10px) rotate(90deg); }
-            50% { transform: translateY(0px) translateX(-10px) rotate(180deg); }
-            75% { transform: translateY(20px) translateX(5px) rotate(270deg); }
-        }
-
-        /* Header */
+        /* HEADER BASE */
         .header {
-            position: fixed;
+            position: sticky;
             top: 0;
-            width: 100%;
             z-index: 1000;
-            padding: 1rem 0;
-            background: rgba(15, 23, 42, 0.8);
-            backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.88);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(15, 23, 42, 0.04);
+            box-shadow: 0 0 0 rgba(0,0,0,0);
+            transition: background 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
         }
-       .social-icons {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    margin-left: 2rem;
-}
-
-.social-icons img {
-    width: 24px;
-    height: 24px;
-    transition: transform 0.3s ease, opacity 0.3s ease;
-}
-
-.social-icons a:hover img {
-    transform: scale(1.2);
-    opacity: 0.8;
-}
 
         .header.scrolled {
-            background: rgba(15, 23, 42, 0.95);
-            backdrop-filter: blur(25px);
+            background: rgba(255, 255, 255, 0.96);
+            border-bottom-color: rgba(15, 23, 42, 0.06);
+            box-shadow: 0 4px 22px rgba(15, 23, 42, 0.09);
         }
 
         .nav-container {
-            max-width: 1400px;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 0 2rem;
+            padding: 0.6rem 2rem;
             display: flex;
-            justify-content: space-between;
             align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
         }
 
+        /* LOGO AREA */
         .logo {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 2rem;
-            font-weight: 700;
-            background: linear-gradient(135deg, #6366f1, #ec4899);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
             text-decoration: none;
-            transition: transform 0.3s ease;
         }
 
-        .logo:hover {
-            transform: scale(1.05);
+        .logo img {
+            height: 72px; /* bigger logo */
+            width: auto;
+            display: block;
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.1;
+        }
+
+        .logo-main {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--text-main);
+        }
+
+        .logo-tagline {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--text-muted);
+        }
+
+        /* CENTER NAV */
+        .nav-main {
+            flex: 1;
+            display: flex;
+            justify-content: center;
         }
 
         .nav-links {
             display: flex;
             list-style: none;
-            gap: 2.5rem;
+            gap: 2.1rem;
+            font-size: 0.95rem;
+            font-weight: 500;
         }
 
         .nav-links a {
-            color: #e2e8f0;
-            text-decoration: none;
-            font-weight: 500;
             position: relative;
-            transition: all 0.3s ease;
-            padding: 0.5rem 0;
+            text-decoration: none;
+            color: var(--text-main);
+            padding-bottom: 4px;
+            opacity: 0.8;
+            transition: color 0.2s ease, opacity 0.2s ease;
         }
 
         .nav-links a::after {
-            content: '';
+            content: "";
             position: absolute;
-            bottom: 0;
             left: 0;
+            bottom: 0;
             width: 0;
             height: 2px;
-            background: linear-gradient(135deg, #6366f1, #ec4899);
-            transition: width 0.3s ease;
-        }
-
-        .nav-links a:hover::after {
-            width: 100%;
+            background: var(--primary);
+            border-radius: 999px;
+            transition: width 0.2s ease;
         }
 
         .nav-links a:hover {
-            color: #ffffff;
-            transform: translateY(-2px);
+            opacity: 1;
+            color: var(--primary);
         }
 
-        /* Hero Section */
-        .hero {
-            min-height: 50vh;
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 100%;
+        }
+
+        .nav-links a.active {
+            color: var(--primary);
+            opacity: 1;
+        }
+
+        /* RIGHT SIDE: PHONE + CTA */
+        .nav-cta {
+            display: flex;
+            align-items: center;
+            gap: 1.1rem;
+        }
+
+        .nav-phone {
+            display: flex;
+            align-items: center;
+            gap: 0.55rem;
+        }
+
+        .nav-phone-icon {
+            width: 30px;
+            height: 30px;
+            border-radius: 999px;
+            background: #fee2e2;
             display: flex;
             align-items: center;
             justify-content: center;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+            font-size: 0.9rem;
         }
 
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: 
-                radial-gradient(circle at 20% 20%, rgba(99, 102, 241, 0.3) 0%, transparent 50%),
-                radial-gradient(circle at 80% 80%, rgba(236, 72, 153, 0.3) 0%, transparent 50%),
-                radial-gradient(circle at 40% 60%, rgba(20, 184, 166, 0.2) 0%, transparent 50%);
-            animation: pulse-bg 8s ease-in-out infinite;
+        .nav-phone-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.1;
         }
 
-        @keyframes pulse-bg {
-            0%, 100% { opacity: 0.5; }
-            50% { opacity: 1; }
+        .nav-phone-label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--text-muted);
         }
 
-        .hero-content {
-            max-width: 900px;
-            padding: 0 2rem;
-            position: relative;
-            z-index: 10;
+        .nav-phone-number {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: #111827;
+        }
+
+        .btn-nav-primary {
+            padding: 0.55rem 1.4rem;
+            border-radius: 999px;
+            border: 1px solid #2563eb;
+            background: #2563eb;
+            color: #ffffff;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-decoration: none;
+            box-shadow: 0 8px 22px rgba(37, 99, 235, 0.22);
+            transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+        }
+
+        .btn-nav-primary:hover {
+            background: #1d4ed8;
+            transform: translateY(-1px);
+            box-shadow: 0 12px 30px rgba(37, 99, 235, 0.35);
+        }
+
+        /* LAYOUT HELPERS */
+        .section {
+            padding: 4rem 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .section-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(1.9rem, 3vw, 2.4rem);
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin-bottom: 0.6rem;
+        }
+
+        .section-subtitle {
+            color: var(--text-muted);
+            max-width: 580px;
+            font-size: 0.98rem;
+        }
+
+        /* HERO */
+        .hero {
+            padding: 3rem 0 2.5rem;
+            background: linear-gradient(to bottom, #f9fafb 0%, #ffffff 50%);
+        }
+
+        .hero-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            display: grid;
+            grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+            gap: 3rem;
+            align-items: center;
         }
 
         .hero-badge {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            padding: 1rem 2rem;
-            border-radius: 50px;
-            margin-bottom: 2rem;
-            display: inline-block;
-            font-weight: 500;
-            color: #e2e8f0;
-            animation: glow 2s ease-in-out infinite alternate;
-        }
-
-        @keyframes glow {
-            from { box-shadow: 0 0 20px rgba(99, 102, 241, 0.3); }
-            to { box-shadow: 0 0 30px rgba(236, 72, 153, 0.5); }
-        }
-
-        .hero h1 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: clamp(3rem, 8vw, 6rem);
-            font-weight: 800;
-            margin-bottom: 1.5rem;
-            background: linear-gradient(135deg, #ffffff 0%, #e2e8f0 50%, #94a3b8 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            animation: slideInUp 1s ease-out;
-        }
-
-        .hero p {
-            font-size: 1.25rem;
-            color: #94a3b8;
-            margin-bottom: 3rem;
-            animation: slideInUp 1s ease-out 0.2s both;
-        }
-
-        .cta-buttons {
-            display: flex;
-            gap: 1.5rem;
-            justify-content: center;
-            flex-wrap: wrap;
-            animation: slideInUp 1s ease-out 0.4s both;
-        }
-
-        .btn-primary, .btn-secondary {
-            padding: 1rem 2.5rem;
-            border-radius: 50px;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.09em;
+            background: #e0ecff;
+            color: var(--primary-dark);
+            padding: 0.45rem 0.85rem;
+            border-radius: 999px;
+            margin-bottom: 1.3rem;
             font-weight: 600;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            position: relative;
+        }
+
+        .hero-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(2.2rem, 4vw, 3rem);
+            font-weight: 800;
+            margin-bottom: 0.6rem;
+            color: #0b1120;
+        }
+
+        .hero-highlight {
+            color: var(--primary);
+        }
+
+        .hero-text {
+            font-size: 0.98rem;
+            color: var(--text-muted);
+            margin-bottom: 1.4rem;
+            max-width: 520px;
+        }
+
+        .hero-bullets {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.85rem;
+            margin-bottom: 1.7rem;
+        }
+
+        .hero-bullets span {
+            font-size: 0.85rem;
+            padding: 0.35rem 0.8rem;
+            border-radius: 999px;
+            background: #f3f4ff;
+            color: var(--primary-dark);
+            border: 1px solid #dbe3ff;
+        }
+
+        .hero-cta-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            align-items: center;
+        }
+
+        .hero-small-note {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        .hero-right {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .hero-card {
+            background: #ffffff;
+            border-radius: 26px;
+            padding: 1.5rem;
+            border: 1px solid var(--border-soft);
+            box-shadow: var(--shadow-soft);
+            width: 100%;
+            max-width: 380px;
+        }
+
+        .hero-card-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+        }
+
+        .hero-card-title {
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .hero-tag {
+            font-size: 0.75rem;
+            padding: 0.2rem 0.6rem;
+            border-radius: 999px;
+            background: #ecfdf5;
+            color: #047857;
+            border: 1px solid #bbf7d0;
+        }
+
+        .hero-car-photo {
+            width: 100%;
+            border-radius: 18px;
             overflow: hidden;
-            z-index: 1;
+            margin-bottom: 0.9rem;
         }
 
-        .btn-primary {
-            background: linear-gradient(135deg, #6366f1, #8b5cf6);
-            color: white;
-            box-shadow: 0 10px 40px rgba(99, 102, 241, 0.3);
+        .hero-car-photo img {
+            width: 100%;
+            height: 190px; /* slightly smaller image */
+            object-fit: cover;
+            display: block;
         }
 
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 20px 60px rgba(99, 102, 241, 0.4);
+        .hero-car-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.6rem;
+            font-size: 0.9rem;
         }
 
-        .btn-secondary {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            color: white;
-            border: 1px solid rgba(255, 255, 255, 0.2);
+        .hero-price {
+            font-weight: 700;
+            color: var(--primary);
+            font-size: 1.1rem;
         }
 
-        .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.2);
-            transform: translateY(-3px);
+        .hero-meta {
+            font-size: 0.8rem;
+            color: var(--text-muted);
         }
 
-        @keyframes slideInUp {
-            from {
-                opacity: 0;
-                transform: translateY(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        .hero-pills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
         }
 
-        /* Search Section */
-        .search-section {
-            padding: 4rem 0;
-            position: relative;
+        .hero-pill {
+            font-size: 0.78rem;
+            padding: 0.28rem 0.7rem;
+            border-radius: 999px;
+            background: var(--bg-soft);
         }
 
-        .search-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
+        /* QUICK BOOKING STRIP */
+        .booking-strip {
+            padding: 1.5rem 0 2.5rem;
+            border-bottom: 1px solid var(--border-soft);
         }
 
-        .search-form {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 3rem;
-            border-radius: 24px;
-            box-shadow: 0 25px 80px rgba(0, 0, 0, 0.3);
-            transition: all 0.3s ease;
-        }
-
-        .search-form:hover {
-            background: rgba(255, 255, 255, 0.08);
-            border-color: rgba(255, 255, 255, 0.2);
-            transform: translateY(-5px);
+        .booking-card {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 1.2rem 1.5rem;
+            box-shadow: var(--shadow-soft);
+            border: 1px solid var(--border-soft);
         }
 
         .form-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.5rem;
-            margin-bottom: 2rem;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 0.9rem;
+            align-items: center;
         }
 
         .form-group {
             display: flex;
             flex-direction: column;
+            gap: 0.35rem;
         }
 
-        .form-group label {
-            font-weight: 600;
-            color: #e2e8f0;
-            margin-bottom: 0.75rem;
-            font-size: 0.9rem;
+        .form-label {
+            font-size: 0.75rem;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
+            letter-spacing: 0.08em;
+            color: var(--text-muted);
+            font-weight: 600;
         }
 
-        .form-group input,
-        .form-group select {
-            padding: 1rem 1.25rem;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 12px;
-            color: white;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
-        }
-
-        .form-group select {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-        }
-
-        .form-group select option {
-            background: #000000;
-            color: white;
-            padding: 0.5rem;
-        }
-
-        .form-group input:focus,
-        .form-group select:focus {
+        .form-control,
+        .form-select {
+            border-radius: 999px;
+            border: 1px solid #d1d5db;
+            padding: 0.55rem 0.9rem;
+            font-size: 0.9rem;
             outline: none;
-            border-color: #6366f1;
-            background: rgba(255, 255, 255, 0.1);
-            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+            color: var(--text-main);
+            background: #ffffff;
+            transition: border-color 0.15s ease, box-shadow 0.15s ease;
         }
 
-        .form-group select:focus {
-            background: rgba(0, 0, 0, 0.9);
+        .form-control:focus,
+        .form-select:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2);
         }
 
         .search-btn {
-            background: linear-gradient(135deg, #6366f1, #8b5cf6);
-            color: white;
-            border: none;
-            padding: 1rem 3rem;
-            border-radius: 50px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 10px 30px rgba(99, 102, 241, 0.3);
             width: 100%;
-            margin-top: 1rem;
         }
 
-        .search-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 15px 40px rgba(99, 102, 241, 0.4);
+        .btn-primary,
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.6rem 1.3rem;
+            border-radius: 999px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.2s ease;
         }
 
-        /* Fleet Section */
-        .fleet {
-            padding: 6rem 0;
-            position: relative;
+        .btn-primary {
+            background: var(--primary);
+            color: #ffffff;
+            box-shadow: 0 8px 22px rgba(37, 99, 235, 0.22);
         }
 
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 2rem;
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-1px);
+            box-shadow: 0 12px 28px rgba(37, 99, 235, 0.3);
         }
 
-        .section-title {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            font-weight: 700;
-            text-align: center;
-            margin-bottom: 1rem;
-            background: linear-gradient(135deg, #ffffff, #94a3b8);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary);
+            border: 1px solid var(--primary);
         }
 
-        .section-subtitle {
-            text-align: center;
-            color: #94a3b8;
-            font-size: 1.2rem;
-            margin-bottom: 4rem;
+        .btn-secondary:hover {
+            background: rgba(37, 99, 235, 0.06);
         }
 
-        .fleet-categories {
+        /* WHY CHOOSE US */
+        .why {
+            background: var(--bg-soft);
+        }
+
+        .why-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 1.8rem;
+            margin-top: 2.2rem;
+        }
+
+        .why-card {
+            background: #ffffff;
+            border-radius: var(--radius-lg);
+            padding: 1.4rem 1.3rem;
+            border: 1px solid var(--border-soft);
+            box-shadow: var(--shadow-soft);
+        }
+
+        .why-title {
+            font-weight: 600;
+            margin-bottom: 0.4rem;
+            font-size: 1rem;
+            color: #111827;
+        }
+
+        .why-text {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        /* FLEET FILTERS & BANNER */
+        .fleet-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
             gap: 1.5rem;
-            margin-bottom: 4rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .fleet-tagline {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .fleet-filters {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            margin-bottom: 1.4rem;
         }
 
         .category-card {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 2rem 1.5rem;
-            border-radius: 20px;
-            text-align: center;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .category-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(236, 72, 153, 0.1));
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .category-card:hover::before,
-        .category-card.active::before {
-            opacity: 1;
-        }
-
-        .category-card:hover,
-        .category-card.active {
-            transform: translateY(-5px) scale(1.02);
-            border-color: rgba(99, 102, 241, 0.5);
-            box-shadow: 0 20px 60px rgba(99, 102, 241, 0.2);
-        }
-
-        .category-icon {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            position: relative;
-            z-index: 2;
-        }
-
-        .category-card h3 {
+            border-radius: 999px;
+            border: 1px solid var(--border-soft);
+            padding: 0.5rem 1.1rem;
+            font-size: 0.85rem;
             font-weight: 600;
-            color: #ffffff;
-            position: relative;
-            z-index: 5;
+            background: #ffffff;
+            color: var(--text-main);
+            cursor: pointer;
+            transition: all 0.2s ease;
         }
 
+        .category-card:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+        .category-card.active {
+            background: var(--primary);
+            color: #ffffff;
+            border-color: var(--primary);
+            box-shadow: 0 6px 18px rgba(37, 99, 235, 0.25);
+        }
+
+        .fleet-banner {
+            margin: 0 0 2rem;
+            overflow: hidden;
+            border-radius: 20px;
+            border: 1px solid var(--border-soft);
+            box-shadow: var(--shadow-soft);
+            background: #020617;
+        }
+
+        .fleet-banner-track {
+            display: flex;
+            gap: 0.5rem;
+            padding: 0.5rem;
+            animation: fleet-scroll 45s linear infinite;
+        }
+
+        .fleet-banner img {
+            height: 140px;
+            width: auto;
+            border-radius: 14px;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+
+        @keyframes fleet-scroll {
+            0%   { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        @media (max-width: 768px) {
+            .fleet-banner img {
+                height: 110px;
+            }
+        }
+
+        /* FLEET GRID */
         .cars-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2.5rem;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 1.8rem;
         }
 
         .car-card {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 24px;
+            background: #ffffff;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border-soft);
+            box-shadow: var(--shadow-soft);
             overflow: hidden;
-            transition: all 0.4s ease;
-            position: relative;
-        }
-
-        .car-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(135deg, rgba(99, 102, 241, 0.05), rgba(236, 72, 153, 0.05));
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .car-card:hover::before {
-            opacity: 1;
-        }
-
-        .car-card:hover {
-            transform: translateY(-10px) scale(1.02);
-            border-color: rgba(99, 102, 241, 0.3);
-            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.3);
+            display: flex;
+            flex-direction: column;
         }
 
         .car-image {
-             height: 250px;
             position: relative;
+            height: 190px;
             overflow: hidden;
-            background: linear-gradient(135deg, #1e293b, #334155);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-}
-      .car-image img {
+            cursor: pointer;
+        }
+
+        .car-image img {
             width: 100%;
             height: 100%;
-            object-fit: cover; /* Or 'contain' if you want the whole car to be visible */
-            display: block;
-}  
-/*
-        .car-image::after {
-            content: '🚗';
-            font-size: 4rem;
-            opacity: 0.3;
-        }*/
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .car-image:hover img {
+            transform: scale(1.04);
+        }
 
         .car-category-badge {
             position: absolute;
-            top: 1rem;
-            left: 1rem;
-            background: linear-gradient(135deg, #6366f1, #8b5cf6);
-            color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            box-shadow: 0 5px 15px rgba(99, 102, 241, 0.3);
+            top: 0.8rem;
+            left: 0.8rem;
+            background: #111827cc;
+            color: #ffffff;
+            font-size: 0.75rem;
+            padding: 0.25rem 0.7rem;
+            border-radius: 999px;
         }
 
         .car-info {
-            padding: 2rem;
-            position: relative;
-            z-index: 2;
+            padding: 1.2rem 1.3rem 1.1rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
         }
 
         .car-info h3 {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: #ffffff;
-            margin-bottom: 0.5rem;
+            font-size: 1.05rem;
+            font-weight: 600;
+            margin-bottom: 0.1rem;
+        }
+
+        .car-meta-line {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-bottom: 0.6rem;
         }
 
         .car-price {
-            font-size: 2rem;
-            font-weight: 800;
-            background: linear-gradient(135deg, #6366f1, #ec4899);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 1.5rem;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 0.8rem;
         }
 
         .car-features {
             list-style: none;
-            margin-bottom: 2rem;
+            margin-bottom: 0.9rem;
+            font-size: 0.86rem;
+            color: var(--text-muted);
         }
 
         .car-features li {
-            padding: 0.5rem 0;
-            color: #94a3b8;
-            display: flex;
-            align-items: center;
-            font-size: 0.95rem;
+            margin-bottom: 0.2rem;
         }
 
-        .car-features li::before {
-            content: '✨';
-            margin-right: 0.75rem;
-            font-size: 1.1rem;
+        .car-bottom-row {
+            margin-top: auto;
         }
 
         .reserve-btn {
             width: 100%;
-            background: linear-gradient(135deg, #6366f1, #8b5cf6);
-            color: white;
+            border-radius: 999px;
             border: none;
-            padding: 1rem;
-            border-radius: 50px;
+            padding: 0.65rem 1rem;
+            background: var(--primary);
+            color: #ffffff;
+            font-size: 0.9rem;
             font-weight: 600;
             cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 10px 30px rgba(99, 102, 241, 0.3);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .reserve-btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-            transition: left 0.5s ease;
-        }
-
-        .reserve-btn:hover::before {
-            left: 100%;
+            transition: background 0.15s ease, transform 0.1s ease;
         }
 
         .reserve-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 15px 40px rgba(99, 102, 241, 0.4);
+            background: var(--primary-dark);
+            transform: translateY(-1px);
         }
 
-        /* Features Section */
-        .features {
-            padding: 6rem 0;
-            background: linear-gradient(135deg, rgba(15, 23, 42, 0.8), rgba(30, 41, 59, 0.8));
-            position: relative;
+        /* TESTIMONIALS */
+        .testimonials {
+            background: #f9fafb;
         }
 
-        .features-grid {
+        .test-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 3rem;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
         }
 
-        .feature-card {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 3rem 2rem;
-            border-radius: 24px;
-            text-align: center;
-            transition: all 0.4s ease;
-            position: relative;
-            overflow: hidden;
+        .test-card {
+            background: #ffffff;
+            border-radius: var(--radius-lg);
+            padding: 1.3rem 1.2rem;
+            border: 1px solid var(--border-soft);
+            box-shadow: var(--shadow-soft);
+            font-size: 0.9rem;
         }
 
-        .feature-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(20, 184, 166, 0.1));
-            opacity: 0;
-            transition: opacity 0.3s ease;
+        .test-stars {
+            color: #f59e0b;
+            margin-bottom: 0.4rem;
+            font-size: 0.85rem;
         }
 
-        .feature-card:hover::before {
-            opacity: 1;
+        .test-name {
+            font-weight: 600;
+            margin-top: 0.5rem;
+            font-size: 0.9rem;
         }
 
-        .feature-card:hover {
-            transform: translateY(-10px);
-            border-color: rgba(20, 184, 166, 0.3);
-            box-shadow: 0 25px 80px rgba(20, 184, 166, 0.2);
+        .test-tag {
+            font-size: 0.78rem;
+            color: var(--text-muted);
         }
 
-        .feature-icon {
-            width: 100px;
-            height: 100px;
-            background: linear-gradient(135deg, #14b8a6, #06b6d4);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 2rem;
-            font-size: 2.5rem;
-            box-shadow: 0 15px 40px rgba(20, 184, 166, 0.3);
-            position: relative;
-            z-index: 2;
-        }
-
-        .feature-card h3 {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: #ffffff;
-            margin-bottom: 1rem;
-            position: relative;
-            z-index: 2;
-        }
-
-        .feature-card p {
-            color: #94a3b8;
-            line-height: 1.7;
-            position: relative;
-            z-index: 2;
-        }
-
-        /* Locations Section */
-        .locations {
-            padding: 6rem 0;
-        }
-
-        .location-content {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
-
-        .location-content h2 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 3rem;
-            font-weight: 700;
-            color: #ffffff;
-            margin-bottom: 1rem;
-        }
-
-        .location-content p {
-            color: #94a3b8;
-            font-size: 1.2rem;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
+        /* LOCATIONS */
         .location-map {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            height: 400px;
-            border-radius: 24px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #94a3b8;
-            font-size: 1.2rem;
-            position: relative;
+            margin-top: 2rem;
+            border-radius: 20px;
             overflow: hidden;
+            box-shadow: var(--shadow-soft);
+            border: 1px solid var(--border-soft);
         }
 
         .location-map iframe {
-            border-radius: 24px;
-            filter: grayscale(1) invert(1) contrast(1.2);
-            opacity: 0.8;
+            border: none;
+            width: 100%;
+            height: 320px;
         }
 
-        /* Footer */
+        /* FOOTER */
         .footer {
-            background: linear-gradient(135deg, #0f172a, #1e293b);
-            padding: 4rem 0 2rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            background: #060b1a;
+            color: #ffffff;
+            padding: 3rem 0 2rem;
+            margin-top: 3rem;
         }
 
-        .footer-content {
+        .footer-inner {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 2rem;
-            text-align: center;
+            padding: 0 1.5rem;
         }
 
-        .footer h3 {
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1.4fr 2fr 1.2fr;
+            gap: 2.5rem;
+        }
+
+        .footer-title {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: 2rem;
+            font-size: 1rem;
             font-weight: 700;
-            margin-bottom: 2rem;
-            background: linear-gradient(135deg, #6366f1, #ec4899);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 0.4rem;
         }
 
-        .footer p {
-            margin: 1rem 0;
-            color: #94a3b8;
-            font-size: 1.1rem;
+        .footer-underline {
+            width: 40px;
+            height: 3px;
+            background: var(--primary);
+            margin-bottom: 1.1rem;
+        }
+
+        .footer-list {
+            list-style: none;
+            font-size: 0.9rem;
+        }
+
+        .footer-list li {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 0.4rem;
+            color: #e5e7eb;
+        }
+
+        .footer-icon {
+            font-size: 1rem;
+        }
+
+        .footer-links {
+            list-style: none;
+            font-size: 0.9rem;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.35rem;
+        }
+
+        .footer-links a {
+            color: #e5e7eb;
+            text-decoration: none;
+        }
+
+        .footer-links a:hover {
+            color: #ffffff;
+        }
+
+        .footer-text {
+            font-size: 0.9rem;
+            color: #e5e7eb;
+            margin-bottom: 1.2rem;
+        }
+
+        .footer-btn-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.7rem;
+        }
+
+        .footer-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.55rem 1.3rem;
+            border-radius: 999px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.15s ease;
+        }
+
+        .footer-btn-primary {
+            background: #ef4444;
+            color: #ffffff;
+        }
+
+        .footer-btn-primary:hover {
+            background: #b91c1c;
+        }
+
+        .footer-btn-outline {
+            border: 1px solid #9ca3af;
+            color: #e5e7eb;
+        }
+
+        .footer-btn-outline:hover {
+            border-color: #ffffff;
+            color: #ffffff;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 0.6rem;
+            align-items: center;
+        }
+
+        .footer-social img {
+            width: 24px;
+            height: 24px;
+            filter: brightness(0) invert(1);
+            transition: transform 0.15s ease, opacity 0.15s ease;
+        }
+
+        .footer-social a:hover img {
+            transform: scale(1.08);
+            opacity: 0.85;
         }
 
         .footer-bottom {
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            margin-top: 3rem;
-            padding-top: 2rem;
-            color: #64748b;
+            border-top: 1px solid rgba(148, 163, 184, 0.4);
+            margin-top: 2.4rem;
+            padding-top: 1.4rem;
+            text-align: center;
+            font-size: 0.8rem;
+            color: #9ca3af;
         }
 
-        /* Scroll Animations */
+        /* FLOATING ACTIONS (WhatsApp + Call) */
+        .floating-actions {
+            position: fixed;
+            right: 1.5rem;
+            bottom: 5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            z-index: 1200;
+        }
+
+        .floating-btn {
+            width: 48px;
+            height: 48px;
+            border-radius: 999px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            text-decoration: none;
+            color: #ffffff;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+            transition: transform 0.25s ease, box-shadow 0.25s ease, opacity 0.2s ease;
+        }
+
+        .floating-whatsapp {
+            background: #22c55e; /* green for WA */
+        }
+
+        .floating-call {
+            background: #2563eb; /* blue for call */
+        }
+
+        .floating-btn:hover {
+            transform: translateY(-2px) scale(1.05);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.55);
+        }
+
+        /* MOBILE STICKY CALL BAR */
+        .mobile-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: #ffffff;
+            border-top: 1px solid #e5e7eb;
+            display: none;
+            z-index: 1200;
+        }
+
+        .mobile-bar-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0.45rem 1rem 0.75rem;
+            display: flex;
+            gap: 0.6rem;
+        }
+
+        .mobile-bar a {
+            flex: 1;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-align: center;
+            border-radius: 999px;
+            padding: 0.5rem 0.6rem;
+            text-decoration: none;
+        }
+
+        .mobile-call {
+            background: var(--primary);
+            color: #ffffff;
+        }
+
+        .mobile-whatsapp {
+            background: #22c55e;
+            color: #ffffff;
+        }
+
+        .mobile-book {
+            border: 1px solid var(--primary);
+            color: var(--primary);
+            background: #eef2ff;
+        }
+
+        /* Fade-in helper */
         .fade-in-up {
             opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.6s ease;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
         }
 
         .fade-in-up.visible {
@@ -832,443 +1061,659 @@
             transform: translateY(0);
         }
 
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
+        /* RESPONSIVE */
+        @media (max-width: 1024px) {
+            .nav-container {
+                padding-inline: 1.25rem;
+                gap: 1rem;
             }
 
-            .hero h1 {
-                font-size: 2.5rem;
+            .logo img {
+                height: 60px;
             }
 
-            .cta-buttons {
-                flex-direction: column;
-                align-items: center;
+            .logo-text {
+                display: none; /* keep logo compact on tablet/mobile */
             }
 
-            .btn-primary, .btn-secondary {
-                width: 100%;
-                max-width: 300px;
-            }
-
-            .search-form {
-                padding: 2rem;
-            }
-
-            .form-grid {
+            .hero-inner {
                 grid-template-columns: 1fr;
             }
 
-            .fleet-categories {
-                grid-template-columns: repeat(2, 1fr);
+            .hero-right {
+                justify-content: flex-start;
             }
 
             .cars-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .test-grid,
+            .why-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .footer-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .form-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-main {
+                display: none; /* hide menu links on mobile */
+            }
+
+            .nav-cta {
+                margin-left: auto;
+            }
+
+            .nav-phone-text {
+                display: none; /* only icon + button */
+            }
+
+            .hero {
+                padding-top: 2.2rem;
+            }
+
+            .booking-card {
+                padding: 1rem 1.1rem;
+            }
+
+            .cars-grid,
+            .test-grid,
+            .why-grid,
+            .footer-grid {
                 grid-template-columns: 1fr;
             }
 
-            .features-grid {
-                grid-template-columns: 1fr;
+            .location-map iframe {
+                height: 260px;
+            }
+
+            .floating-actions {
+                right: 1rem;
+                bottom: 4.5rem;
+            }
+
+            .mobile-bar {
+                display: block;
             }
         }
 
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: #1e293b;
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: linear-gradient(135deg, #6366f1, #ec4899);
-            border-radius: 4px;
-        }
-
-        ::-webkit-scrollbar-thumb:hover {
-            background: linear-gradient(135deg, #4338ca, #db2777);
+        @media (max-width: 480px) {
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- Animated Background -->
-    <div class="animated-bg">
-        <div class="floating-shapes">
-            <div class="shape"></div>
-            <div class="shape"></div>
-            <div class="shape"></div>
-        </div>
-    </div>
 
-    <!-- Header -->
-    <header class="header" id="header">
-      <div class="nav-container">
-    <a href="#" class="logo">Sunbury Rentals</a>
-    <nav>
-        <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#fleet">Fleet</a></li>
-            <li><a href="#locations">Locations</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
-    <div class="social-icons">
-        <a href="https://www.facebook.com/share/1Ln69bzKkg/?mibextid=wwXIfr" target="_blank" aria-label="Facebook">
-            <img src="images/facebook.png" alt="Facebook">
-        </a>
-        <a href="https://www.instagram.com/sunbury_rentals?igsh=MWU0YW9rNDV4YnI0bQ%3D%3D&utm_source=qr" target="_blank" aria-label="Instagram">
-            <img src="images/instagram.png" alt="Instagram">
-        </a>
-         <a href="tel:+61430410450">
-        <img src="images/phone.png" alt="Phone">
-    </a>
-    <a href="mailto:sunburycarrentals@gmail.com">
-        <img src="images/message.png" alt="Email">
-    </a>
-    </div>
-</div>
+    <!-- HEADER -->
+    <header id="header" class="header">
+        <div class="nav-container">
+            <!-- LEFT: LOGO -->
+            <a href="#home" class="logo">
+                <img src="images/Sunbury Rentals Logo.png" alt="Sunbury Rentals logo">
+                <div class="logo-text">
+                    <span class="logo-main">Sunbury Rentals</span>
+                    <span class="logo-tagline">Drive your dreams</span>
+                </div>
+            </a>
+
+            <!-- CENTER: NAV LINKS -->
+            <nav class="nav-main">
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#fleet">Fleet</a></li>
+                    <li><a href="#why">Why Us</a></li>
+                    <li><a href="#locations">Locations</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+
+            <!-- RIGHT: PHONE + CTA -->
+            <div class="nav-cta">
+                <div class="nav-phone">
+                    <div class="nav-phone-icon">📞</div>
+                    <div class="nav-phone-text">
+                        <span class="nav-phone-label">Call now</span>
+                        <span class="nav-phone-number">0430 410 450</span>
+                    </div>
+                </div>
+                <a href="tel:+61430410450" class="btn-nav-primary">Book a car</a>
+            </div>
+        </div>
     </header>
 
-
-    <!-- Hero Section -->
+    <!-- HERO -->
     <section id="home" class="hero">
-        <div class="hero-content">
-            <div class="hero-badge">🚗 Premium Car Rentals & Rideshare Vehicles</div>
-            <h1>Drive Your Dreams</h1>
-            <p>Experience luxury, comfort, and reliability with our premium fleet of vehicles in Sunbury and Melbourne</p>
-            <div class="cta-buttons">
-                <a href="#fleet" class="btn-primary">Explore Fleet</a>
-                <a href="#contact" class="btn-secondary">Get Quote</a>
-            </div>
-        </div>
-    </section>
+        <div class="hero-inner">
+            <div>
+                <div class="hero-badge">
+                    <span>Local Sunbury Car Hire</span>
+                </div>
+                <h1 class="hero-title">
+                    Drive Your <span class="hero-highlight">Dreams</span> with
+                    Reliable Cars from <span class="hero-highlight">$160/week</span>
+                </h1>
+                <p class="hero-text">
+                    Sunbury Rentals provides affordable, well-maintained cars, rideshare vehicles and commercial vans
+                    for Sunbury and greater Melbourne. Perfect for daily use, Uber, DiDi, deliveries and long trips.
+                </p>
 
-    <!-- Search Section -->
-   <!-- Search Section -->
-<section class="search-section">
-    <div class="search-container">
-        <form class="search-form fade-in-up">
-            <div class="form-grid">
-                <div class="form-group">
-                    <label for="pickup-location">Pickup Location</label>
-                    <select id="pickup-location">
-                        <option value="">Select Location</option>
-                        <option value="sunbury">Sunbury - Jackson Road</option>
-                        <option value="melbourne-cbd">Melbourne CBD</option>
-                        <option value="melbourne-airport">Melbourne Airport</option>
-                        <option value="richmond">Richmond</option>
-                        <option value="brunswick">Brunswick</option>
-                        <option value="carlton">Carlton</option>
-                        <option value="fitzroy">Fitzroy</option>
-                        <option value="docklands">Docklands</option>
-                        <option value="southbank">Southbank</option>
-                        <option value="st-kilda">St Kilda</option>
-                        <option value="preston">Preston</option>
-                        <option value="essendon">Essendon</option>
-                        <option value="footscray">Footscray</option>
-                        <option value="cheltenham">Cheltenham</option>
-                        <option value="dandenong">Dandenong</option>
-                        <option value="glen-waverley">Glen Waverley</option>
-                        <option value="werribee">Werribee</option>
-                        <option value="frankston">Frankston</option>
-                        <option value="box-hill">Box Hill</option>
-                    </select>
+                <div class="hero-bullets">
+                    <span>✅ Rideshare &amp; delivery ready</span>
+                    <span>✅ Flexible weekly rentals</span>
+                    <span>✅ Local Sunbury support</span>
                 </div>
 
-                <div class="form-group">
-                    <label for="pickup-date">Pickup Date</label>
-                    <input type="date" id="pickup-date">
+                <div class="hero-cta-row">
+                    <a href="#booking" class="btn-primary">Get a Quote</a>
+                    <a href="tel:+61430410450" class="btn-secondary">Call Now</a>
+                    <span class="hero-small-note">Replies within 2 hours, 7 days a week</span>
                 </div>
-
-                <div class="form-group">
-                    <label for="return-date">Return Date</label>
-                    <input type="date" id="return-date">
-                </div>
-
-                <div class="form-group">
-                    <label for="pickup-time">Pickup Time</label>
-                    <input type="time" id="pickup-time" value="10:00">
-                </div>
-
-                <div class="form-group">
-                    <label for="customer-name">Your Name</label>
-                    <input type="text" id="customer-name" placeholder="Enter your full name" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="customer-email">Your Email</label>
-                    <input type="email" id="customer-email" placeholder="Enter your email address" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="customer-phone">Your Phone</label>
-                    <input type="tel" id="customer-phone" placeholder="+61 xxx xxx xxx" required>
-                </div>
-
             </div>
 
-            <button type="submit" class="search-btn" id="search-btn">
-                <span class="btn-text">📧 Send Email to Team</span>
-                <span class="btn-loading" style="display: none;">📧 Sending Request...</span>
-            </button>
-        </form>
-    </div>
-</section>
-
-<!-- Fleet Section -->
-<section id="fleet" class="fleet">
-    <div class="cars-grid">
-
-        <!-- Honda Civic -->
-        <div class="car-card">
-            <div class="car-image">
-                <img src="images/Honda-Civic.jpg" alt="Honda Civic">
-                <div class="car-category-badge">Economy</div>
-            </div>
-            <div class="car-info">
-                <h3>Honda Civic</h3>
-                <div class="car-price">$250/Week</div>
-                <ul class="car-features">
-                    <li>5 Passengers</li>
-                    <li>Climate Control</li>
-                    <li>Automatic Transmission</li>
-                    <li>Fuel Efficient</li>
-                    <li>CPVV Registered</li>
-                </ul>
-                <button class="reserve-btn" onclick="bookCar('Honda Civic')">Call to Reserve</button>
-            </div>
-        </div>
-
-        <!-- Toyota Corolla -->
-        <div class="car-card">
-            <div class="car-image">
-                <img src="images/toyota-corolla.jpg" alt="Toyota Corolla">
-                <div class="car-category-badge">Economy</div>
-            </div>
-            <div class="car-info">
-                <h3>Toyota Corolla</h3>
-                <div class="car-price">$190/Week</div>
-                <ul class="car-features">
-                    <li>4 Passengers</li>
-                    <li>Excellent MPG</li>
-                    <li>Bluetooth Connectivity</li>
-                    <li>Safety Features</li>
-                    <li>CPVV Registered</li>
-                </ul>
-                <button class="reserve-btn" onclick="bookCar('Toyota Corolla')">Call to Reserve</button>
-            </div>
-        </div>
-
-        <!-- Ford Kuga -->
-        <div class="car-card">
-            <div class="car-image">
-                <img src="images/ford-kuga.jpg" alt="Ford Kuga">
-                <div class="car-category-badge">SUV</div>
-            </div>
-            <div class="car-info">
-                <h3>Ford Kuga</h3>
-                <div class="car-price">$220/Week</div>
-                <ul class="car-features">
-                    <li>7 Passengers</li>
-                    <li>All-Wheel Drive</li>
-                    <li>Premium Safety</li>
-                    <li>Spacious Interior</li>
-                    <li>CPVV Registered</li>
-                </ul>
-                <button class="reserve-btn" onclick="bookCar('Ford Kuga')">Call to Reserve</button>
-            </div>
-        </div>
-
-        <!-- Audi Q7 -->
-        <div class="car-card">
-            <div class="car-image">
-                <img src="images/audi-q7.jpg" alt="Audi Q7">
-                <div class="car-category-badge">Luxury SUV</div>
-            </div>
-            <div class="car-info">
-                <h3>Audi Q7</h3>
-                <div class="car-price">$650/Week</div>
-                <ul class="car-features">
-                    <li>7 Passengers</li>
-                    <li>Quattro AWD</li>
-                    <li>Premium Interior</li>
-                    <li>Advanced Tech</li>
-                    <li>CPVV Registered</li>
-                </ul>
-                <button class="reserve-btn" onclick="bookCar('Audi Q7')">Call to Reserve</button>
-            </div>
-        </div>
-
-        <!-- BMW 3 Series -->
-        <div class="car-card">
-            <div class="car-image">
-                <img src="images/bmw-3-series.jpg" alt="BMW 3 Series">
-                <div class="car-category-badge">Executive</div>
-            </div>
-            <div class="car-info">
-                <h3>BMW 3 Series</h3>
-                <div class="car-price">$700/Week</div>
-                <ul class="car-features">
-                    <li>Premium Leather</li>
-                    <li>Navigation System</li>
-                    <li>Sport Package</li>
-                    <li>Premium Audio</li>
-                    <li>CPVV Registered</li>
-                </ul>
-                <button class="reserve-btn" onclick="bookCar('BMW 3 Series')">Call to Reserve</button>
-            </div>
-        </div>
-
-        <!-- Ford Mustang -->
-        <div class="car-card">
-            <div class="car-image">
-                <img src="images/ford-mustang.jpg" alt="Ford Mustang">
-                <div class="car-category-badge">Sports Car</div>
-            </div>
-            <div class="car-info">
-                <h3>Ford Mustang</h3>
-                <div class="car-price">$900/Week</div>
-                <ul class="car-features">
-                    <li>2 Passengers</li>
-                    <li>V8 Engine</li>
-                    <li>Sport Suspension</li>
-                    <li>Premium Sound</li>
-                    <li>Apple car play</li>
-                </ul>
-                <button class="reserve-btn" onclick="bookCar('Ford Mustang')">Call to Reserve</button>
-            </div>
-        </div>
-
-        <!-- Delivery Van 3.5 Tons -->
-        <div class="car-card">
-            <div class="car-image">
-                <img src="images/Vans.jpg" alt="Delivery Van 3.5 Tons">
-                <div class="car-category-badge">Commercial</div>
-            </div>
-            <div class="car-info">
-                <h3>Delivery Van 3.5 Tons</h3>
-                <div class="car-price">$320/Week</div>
-                <ul class="car-features">
-                    <li>2 Passengers</li>
-                    <li>3.5 Ton Cargo Capacity</li>
-                    <li>Spacious Interior</li>
-                    <li>Rear & Side Doors</li>
-                    <li>Cooler Fridge</li>
-                </ul>
-                <button class="reserve-btn" onclick="bookCar('Delivery Van 3.5 Tons')">Call to Reserve</button>
-            </div>
-        </div>
-
-        <!-- 4.5 Ton Truck -->
-        <div class="car-card">
-            <div class="car-image">
-                <img src="images/Trucks.jpg" alt="4.5 Ton Truck">
-                <div class="car-category-badge">Commercial</div>
-            </div>
-            <div class="car-info">
-                <h3>4.5 Ton Truck</h3>
-                <div class="car-price">$550/Week</div>
-                <ul class="car-features">
-                    <li>3 Seats</li>
-                    <li>4.5 Ton Payload Capacity</li>
-                    <li>Hydraulic Lift Available</li>
-                    <li>Box or Tray Body Options</li>
-                    <li>Automatic Transmission</li>
-                </ul>
-                <button class="reserve-btn" onclick="bookCar('4.5 Ton Truck')">Call to Reserve</button>
-            </div>
-        </div>
-
-    </div>
-</section>
-
-    <!-- Features Section -->
-    <section class="features">
-        <div class="container">
-            <div class="features-grid">
-                <div class="feature-card fade-in-up">
-                    <div class="feature-icon">🛡️</div>
-                    <h3>Complete Protection</h3>
-                    <p>Comprehensive insurance coverage including theft, accidents, and collision protection. Drive with complete peace of mind knowing you're fully covered.</p>
-                </div>
-                <div class="feature-card fade-in-up">
-                    <div class="feature-icon">⚡</div>
-                    <h3>Instant Flexibility</h3>
-                    <p>Change your plans without stress. Our flexible cancellation policy means no hidden fees or penalties when life takes an unexpected turn.</p>
-                </div>
-                <div class="feature-card fade-in-up">
-                    <div class="feature-icon">🎧</div>
-                    <h3>24/7 Premium Support</h3>
-                    <p>Round-the-clock customer service with instant help and emergency replacements. We're here whenever you need us, day or night.</p>
+            <div class="hero-right">
+                <div class="hero-card">
+                    <div class="hero-card-header">
+                        <div class="hero-card-title">Featured Rideshare Car</div>
+                        <span class="hero-tag">Most Popular</span>
+                    </div>
+                    <div class="hero-car-photo">
+                        <img src="images/toyota-corolla.jpg" alt="Toyota Corolla for hire in Sunbury">
+                    </div>
+                    <div class="hero-car-info">
+                        <div>
+                            <strong>Toyota Corolla</strong><br>
+                            <span class="hero-meta">Automatic • Fuel efficient • CPVV ready</span>
+                        </div>
+                        <div class="hero-price">$190<span style="font-size:0.8rem;">/week</span></div>
+                    </div>
+                    <div class="hero-pills">
+                        <span class="hero-pill">Perfect for Uber / DiDi</span>
+                        <span class="hero-pill">Low running costs</span>
+                        <span class="hero-pill">Clean &amp; well maintained</span>
+                    </div>
+                    <a href="tel:+61430410450" class="btn-primary" style="width:100%;">Reserve this car</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Locations Section -->
-    <section id="locations" class="locations">
+    <!-- QUICK BOOKING / EMAIL FORM -->
+    <section id="booking" class="booking-strip">
         <div class="container">
-            <div class="location-content fade-in-up">
-                <h2>Prime Melbourne Locations</h2>
-                <p>Strategically positioned across Sunbury and Melbourne's key districts for your ultimate convenience and accessibility.</p>
+            <div class="booking-card">
+                <form class="search-form">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label class="form-label" for="pickup-location">Pickup Location</label>
+                            <select id="pickup-location" class="form-select">
+                                <option value="">Select location</option>
+                                <option value="Sunbury">Sunbury - Jackson Road</option>
+                                <option value="Melbourne CBD">Melbourne CBD</option>
+                                <option value="Melbourne Airport">Melbourne Airport</option>
+                                <option value="Richmond">Richmond</option>
+                                <option value="Brunswick">Brunswick</option>
+                                <option value="Essendon">Essendon</option>
+                                <option value="Footscray">Footscray</option>
+                                <option value="Werribee">Werribee</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="pickup-date">Pickup Date</label>
+                            <input type="date" id="pickup-date" class="form-control">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="return-date">Return Date</label>
+                            <input type="date" id="return-date" class="form-control">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="pickup-time">Pickup Time</label>
+                            <input type="time" id="pickup-time" class="form-control" value="10:00">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="customer-name">Your Name</label>
+                            <input type="text" id="customer-name" class="form-control" placeholder="Full name">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="customer-phone">Your Phone</label>
+                            <input type="tel" id="customer-phone" class="form-control" placeholder="+61 xxx xxx xxx">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="customer-email">Your Email</label>
+                            <input type="email" id="customer-email" class="form-control" placeholder="you@example.com">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">&nbsp;</label>
+                            <button type="submit" id="search-btn" class="btn-primary search-btn">
+                                <span class="btn-text">📧 Send Booking Request</span>
+                                <span class="btn-loading" style="display:none;">Sending…</span>
+                            </button>
+                        </div>
+                    </div>
+                </form>
             </div>
-            <div class="location-map fade-in-up">
-                <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d50513.89473165414!2d144.69692654863278!3d-37.57841037948089!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad65d4dd5c5bf91%3A0x5045675218ce840!2sSunbury%20VIC%203429%2C%20Australia!5e0!3m2!1sen!2sus!4v1635123456789!5m2!1sen!2sus" 
-                    width="100%" 
-                    height="100%" 
-                    style="border:0; border-radius: 24px;" 
-                    allowfullscreen="" 
-                    loading="lazy">
+        </div>
+    </section>
+
+    <!-- WHY CHOOSE US -->
+    <section id="why" class="section why">
+        <div class="container">
+            <h2 class="section-title">Why Drivers Choose Sunbury Rentals</h2>
+            <p class="section-subtitle">
+                Whether you're driving for Uber, DiDi, deliveries or just need a reliable car, we make it simple, flexible
+                and affordable for locals in Sunbury and Melbourne.
+            </p>
+
+            <div class="why-grid">
+                <div class="why-card">
+                    <div class="why-title">Fair &amp; Transparent Weekly Rates</div>
+                    <p class="why-text">
+                        Clear pricing from $160/week with no hidden surprises. Easy weekly payments that work with your cash flow.
+                    </p>
+                </div>
+                <div class="why-card">
+                    <div class="why-title">Fully Serviced, Ready to Work</div>
+                    <p class="why-text">
+                        Our cars are regularly serviced, cleaned and checked so you can drive confidently every day and focus on earning.
+                    </p>
+                </div>
+                <div class="why-card">
+                    <div class="why-title">Local Sunbury Support</div>
+                    <p class="why-text">
+                        Speak directly with a local owner, not a call centre. Fast help, flexible pickup options and honest advice.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FLEET -->
+    <section id="fleet" class="section">
+        <div class="container">
+            <div class="fleet-header">
+                <div>
+                    <h2 class="section-title">Our Fleet</h2>
+                    <p class="section-subtitle">
+                        Economy cars, rideshare-ready vehicles and commercial vans – all set up for work and everyday life.
+                    </p>
+                </div>
+                <div class="fleet-tagline">
+                    More cars available on request – contact us for current availability.
+                </div>
+            </div>
+
+            <!-- FLEET BANNER STRIP -->
+            <div class="fleet-banner">
+                <div class="fleet-banner-track">
+                    <img src="images/toyota-corolla.jpg" alt="Toyota Corolla">
+                    <img src="images/Honda-Civic.jpg" alt="Honda Civic">
+                    <img src="images/ford-kuga.jpg" alt="Ford Kuga SUV">
+                    <img src="images/audi-q7.jpg" alt="Audi Q7">
+                    <img src="images/bmw-3-series.jpg" alt="BMW 3 Series">
+                    <img src="images/Vans.jpg" alt="Delivery Van">
+                    <img src="images/Trucks.jpg" alt="Refrigerated Truck">
+
+                    <!-- duplicate for smooth loop -->
+                    <img src="images/toyota-corolla.jpg" alt="Toyota Corolla">
+                    <img src="images/Honda-Civic.jpg" alt="Honda Civic">
+                    <img src="images/ford-kuga.jpg" alt="Ford Kuga SUV">
+                    <img src="images/audi-q7.jpg" alt="Audi Q7">
+                    <img src="images/bmw-3-series.jpg" alt="BMW 3 Series">
+                    <img src="images/Vans.jpg" alt="Delivery Van">
+                    <img src="images/Trucks.jpg" alt="Refrigerated Truck">
+                </div>
+            </div>
+
+            <!-- FLEET FILTER BUTTONS -->
+            <div class="fleet-filters">
+                <button class="category-card active" data-category="all">All vehicles</button>
+                <button class="category-card" data-category="car">Cars</button>
+                <button class="category-card" data-category="suv">SUVs</button>
+                <button class="category-card" data-category="van">Vans</button>
+                <button class="category-card" data-category="truck">Trucks</button>
+                <button class="category-card" data-category="premium">Premium / Executive</button>
+            </div>
+
+            <div class="cars-grid">
+                <!-- Honda Civic -->
+                <div class="car-card" data-category="car">
+                    <div class="car-image" onclick="openFleetGallery('civic')">
+                        <img src="images/Honda-Civic.jpg" alt="Honda Civic for hire in Sunbury">
+                        <div class="car-category-badge">Economy</div>
+                    </div>
+                    <div class="car-info">
+                        <h3>Honda Civic</h3>
+                        <div class="car-meta-line">Automatic • Great on fuel • 5 seats</div>
+                        <div class="car-price">$300/week</div>
+                        <ul class="car-features">
+                            <li>Perfect for city driving &amp; rideshare</li>
+                            <li>Air conditioning &amp; Bluetooth</li>
+                            <li>CPVV registered</li>
+                        </ul>
+                        <div class="car-bottom-row">
+                            <button class="reserve-btn" onclick="callToReserve('Honda Civic')">
+                                Call to reserve
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Toyota Corolla -->
+                <div class="car-card" data-category="car">
+                    <div class="car-image" onclick="openFleetGallery('corolla')">
+                        <img src="images/toyota-corolla.jpg" alt="Toyota Corolla rental in Sunbury Melbourne">
+                        <div class="car-category-badge">Economy</div>
+                    </div>
+                    <div class="car-info">
+                        <h3>Toyota Corolla</h3>
+                        <div class="car-meta-line">Automatic • Very fuel efficient</div>
+                        <div class="car-price">$190/week</div>
+                        <ul class="car-features">
+                            <li>4–5 passengers</li>
+                            <li>Bluetooth &amp; safety features</li>
+                            <li>CPVV registered – rideshare ready</li>
+                        </ul>
+                        <div class="car-bottom-row">
+                            <button class="reserve-btn" onclick="callToReserve('Toyota Corolla')">
+                                Call to reserve
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ford Kuga -->
+                <div class="car-card" data-category="car suv">
+                    <div class="car-image" onclick="openFleetGallery('kuga')">
+                        <img src="images/ford-kuga.jpg" alt="Ford Kuga SUV rental in Melbourne">
+                        <div class="car-category-badge">SUV</div>
+                    </div>
+                    <div class="car-info">
+                        <h3>Ford Kuga</h3>
+                        <div class="car-meta-line">Spacious SUV • Family &amp; work</div>
+                        <div class="car-price">$220/week</div>
+                        <ul class="car-features">
+                            <li>Comfortable for long trips</li>
+                            <li>Higher driving position &amp; good visibility</li>
+                            <li>CPVV registered</li>
+                        </ul>
+                        <div class="car-bottom-row">
+                            <button class="reserve-btn" onclick="callToReserve('Ford Kuga')">
+                                Call to reserve
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Audi Q7 -->
+                <div class="car-card" data-category="suv premium">
+                    <div class="car-image" onclick="openFleetGallery('audi-q7')">
+                        <img src="images/audi-q7.jpg" alt="Audi Q7 luxury SUV rental">
+                        <div class="car-category-badge">Luxury SUV</div>
+                    </div>
+                    <div class="car-info">
+                        <h3>Audi Q7</h3>
+                        <div class="car-meta-line">Premium 7-seater • Luxury</div>
+                        <div class="car-price">$650/week</div>
+                        <ul class="car-features">
+                            <li>Ideal for premium events &amp; airport transfers</li>
+                            <li>Premium interior &amp; technology</li>
+                            <li>Perfect for family or VIP trips</li>
+                        </ul>
+                        <div class="car-bottom-row">
+                            <button class="reserve-btn" onclick="callToReserve('Audi Q7')">
+                                Call to reserve
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- BMW 3 Series -->
+                <div class="car-card" data-category="car premium">
+                    <div class="car-image" onclick="openFleetGallery('bmw-3')">
+                        <img src="images/bmw-3-series.jpg" alt="BMW 3 Series executive car hire">
+                        <div class="car-category-badge">Executive</div>
+                    </div>
+                    <div class="car-info">
+                        <h3>BMW 3 Series</h3>
+                        <div class="car-meta-line">Executive sedan • Great impression</div>
+                        <div class="car-price">$700/week</div>
+                        <ul class="car-features">
+                            <li>Leather interior &amp; navigation</li>
+                            <li>Perfect for corporate and airport runs</li>
+                            <li>Comfortable and powerful</li>
+                        </ul>
+                        <div class="car-bottom-row">
+                            <button class="reserve-btn" onclick="callToReserve('BMW 3 Series')">
+                                Call to reserve
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mercedes Vito 1.8T Delivery Van -->
+                <div class="car-card" data-category="van">
+                    <div class="car-image" onclick="openFleetGallery('van-18t')">
+                        <img src="images/Vans.jpg" alt="Mercedes Vito 1.8 Ton delivery van rental">
+                        <div class="car-category-badge">Commercial Van</div>
+                    </div>
+                    <div class="car-info">
+                        <h3>Mercedes Vito 1.8T Van</h3>
+                        <div class="car-meta-line">Perfect for courier &amp; delivery work</div>
+                        <div class="car-price">$320/week</div>
+                        <ul class="car-features">
+                            <li>1.8 ton cargo capacity</li>
+                            <li>Sliding side door &amp; wide rear doors</li>
+                            <li>Ideal for ANC &amp; other courier contracts</li>
+                        </ul>
+                        <div class="car-bottom-row">
+                            <button class="reserve-btn" onclick="callToReserve('Mercedes Vito 1.8T Van')">
+                                Call to reserve
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Refrigerated Truck -->
+                <div class="car-card" data-category="truck">
+                    <div class="car-image" onclick="openFleetGallery('truck-fridge')">
+                        <img src="images/Trucks.jpg" alt="Refrigerated truck rental Sunbury">
+                        <div class="car-category-badge">Refrigerated Truck</div>
+                    </div>
+                    <div class="car-info">
+                        <h3>Refrigerated Truck 3.5T</h3>
+                        <div class="car-meta-line">Perfect for food &amp; cold storage deliveries</div>
+                        <div class="car-price">$450/week</div>
+                        <ul class="car-features">
+                            <li>Insulated body with fridge unit</li>
+                            <li>Side &amp; rear access for loading</li>
+                            <li>Ideal for catering and grocery delivery work</li>
+                        </ul>
+                        <div class="car-bottom-row">
+                            <button class="reserve-btn" onclick="callToReserve('Refrigerated Truck 3.5T')">
+                                Call to reserve
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="section testimonials">
+        <div class="container">
+            <h2 class="section-title">What Our Drivers Say</h2>
+            <p class="section-subtitle">Real feedback from locals who rent with Sunbury Rentals for rideshare, work and everyday life.</p>
+
+            <div class="test-grid">
+                <div class="test-card">
+                    <div class="test-stars">★★★★★</div>
+                    <p>
+                        “Very smooth process and honest dealing. I hired a Corolla for Uber and it’s been reliable and clean.
+                        Gourav is always easy to reach.”
+                    </p>
+                    <div class="test-name">Mohit S.</div>
+                    <div class="test-tag">Uber Driver – Melbourne</div>
+                </div>
+                <div class="test-card">
+                    <div class="test-stars">★★★★★</div>
+                    <p>
+                        “Best rental experience in Sunbury. No hidden fees, car was ready on time and in great condition.
+                        Highly recommend for weekly hire.”
+                    </p>
+                    <div class="test-name">Alex M.</div>
+                    <div class="test-tag">Local Resident – Sunbury</div>
+                </div>
+                <div class="test-card">
+                    <div class="test-stars">★★★★★</div>
+                    <p>
+                        “I used the van for delivery work. Good rates, flexible pickup and drop, and the van was perfect for my
+                        courier contract.”
+                    </p>
+                    <div class="test-name">Jaspreet K.</div>
+                    <div class="test-tag">Delivery Driver – Western Suburbs</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LOCATIONS -->
+    <section id="locations" class="section">
+        <div class="container">
+            <h2 class="section-title">Convenient Locations</h2>
+            <p class="section-subtitle">
+                Main base in Sunbury with flexible pickup across Melbourne on request, including airport, CBD and nearby suburbs.
+            </p>
+
+            <div class="location-map">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d50513.89473165414!2d144.69692654863278!3d-37.57841037948089!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad65d4dd5c5bf91%3A0x5045675218ce840!2sSunbury%20VIC%203429%2C%20Australia!5e0!3m2!1sen!2sau!4v1635123456789"
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                    aria-label="Sunbury Rentals location">
                 </iframe>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- FOOTER -->
     <footer id="contact" class="footer">
-        <div class="footer-content">
-            <h3>Connect with Sunbury Rentals</h3>
-            <p>📞 <strong>+61 430 410 450</strong></p>
-            <p>📧 <strong>sunburycarrentals@gmail.com</strong></p>
-            <p>📍 <strong>Jackson Road, Sunbury VIC 3429</strong></p>
+        <div class="footer-inner">
+            <div class="footer-grid">
+                <!-- CONTACTS -->
+                <div>
+                    <h4 class="footer-title">Our Contacts</h4>
+                    <div class="footer-underline"></div>
+                    <ul class="footer-list">
+                        <li><span class="footer-icon">📞</span><span>+61 430 410 450</span></li>
+                        <li><span class="footer-icon">✉️</span><span>sunburycarrentals@gmail.com</span></li>
+                        <li><span class="footer-icon">📍</span><span>Jackson Road, Sunbury VIC 3429</span></li>
+                        <li><span class="footer-icon">🕒</span><span>Open 7 days – by appointment</span></li>
+                        <li><span class="footer-icon">🧾</span><span>ABN 83 880 661 989</span></li>
+                    </ul>
+                </div>
+
+                <!-- QUICK LINKS -->
+                <div>
+                    <h4 class="footer-title">Quick Links</h4>
+                    <div class="footer-underline"></div>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#fleet">Fleet</a></li>
+                        <li><a href="#why">Why Choose Us</a></li>
+                        <li><a href="#booking">Get a Quote</a></li>
+                        <li><a href="#locations">Locations</a></li>
+                    </ul>
+                </div>
+
+                <!-- GET IN TOUCH -->
+                <div>
+                    <h4 class="footer-title">Get in Touch</h4>
+                    <div class="footer-underline"></div>
+                    <p class="footer-text">
+                        We’re always ready to help you find a suitable vehicle for rentals, rideshare or work.
+                        Contact us for availability and pricing.
+                    </p>
+                    <div class="footer-btn-row">
+                        <a href="mailto:sunburycarrentals@gmail.com?subject=Rental%20Inquiry&body=Hi%20Sunbury%20Rentals,"
+                           class="footer-btn footer-btn-primary">
+                            Get in touch
+                        </a>
+                        <a href="https://maps.app.goo.gl/7gcpGD5t5Kfq5X7C6" target="_blank" class="footer-btn footer-btn-outline">
+                            View on map
+                        </a>
+                    </div>
+                </div>
+
+                <!-- FOLLOW US -->
+                <div class="footer-col">
+                    <h4 class="footer-title">Follow Us</h4>
+                    <div class="footer-underline"></div>
+
+                    <div class="footer-social">
+                        <a href="https://www.facebook.com/share/1Ln69bzKkg/?mibextid=wwXIfr" target="_blank" aria-label="Facebook">
+                            <img src="images/facebook.png" alt="Facebook icon">
+                        </a>
+                        <a href="https://www.instagram.com/sunbury_rentals?igsh=MWU0YW9rNDV4YnI0bQ%3D%3D&utm_source=qr" target="_blank" aria-label="Instagram">
+                            <img src="images/instagram.png" alt="Instagram icon">
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
             <div class="footer-bottom">
-                <p>&copy; 2025 Sunbury Rentals. Crafted with passion for premium automotive experiences. ABN 83 88 06 61 989</p>
+                <p>&copy; 2025 Sunbury Rentals. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
     <!-- EmailJS Library -->
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
     <script>
         // Initialize EmailJS with your public key
-        // Replace 'YOUR_PUBLIC_KEY' with your actual EmailJS public key
-        emailjs.init('YOUR_PUBLIC_KEY'); // You'll need to replace this with your actual key
-        
-        // Email configuration - Replace these with your actual EmailJS service details
+        (function () {
+            if (typeof emailjs !== 'undefined') {
+                emailjs.init('qdF6GpA6XQOM8sOlJ');
+            }
+        })();
+
+        // Email configuration
         const EMAIL_CONFIG = {
-            serviceId: 'service_yd4odeg',    // Your EmailJS service ID
-            templateId: 'template_da4kmth',  // Your EmailJS template ID
-            recipientEmail: 'sunburycarrentals@gmail.com' // ⭐ CHANGED: Updated email address
+            serviceId: 'service_yd4odeg',
+            templateId: 'template_da4kmth',
+            recipientEmail: 'sunburycarrentals@gmail.com'
         };
+
         // Header scroll effect
         window.addEventListener('scroll', () => {
             const header = document.getElementById('header');
+            if (!header) return;
+
             if (window.scrollY > 100) {
                 header.classList.add('scrolled');
             } else {
                 header.classList.remove('scrolled');
             }
         });
-        (function() {
-    if (typeof emailjs !== 'undefined') {
-        emailjs.init('qdF6GpA6XQOM8sOlJ');
-    }
-})();
 
-        // Intersection Observer for animations
+        // Intersection Observer for fade-in
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
@@ -1282,7 +1727,6 @@
             });
         }, observerOptions);
 
-        // Observe all fade-in-up elements
         document.querySelectorAll('.fade-in-up').forEach(el => {
             observer.observe(el);
         });
@@ -1293,15 +1737,14 @@
         document.getElementById('return-date').min = today;
 
         // Update return date when pickup changes
-        document.getElementById('pickup-date').addEventListener('change', function() {
+        document.getElementById('pickup-date').addEventListener('change', function () {
             document.getElementById('return-date').min = this.value;
         });
 
-        // Enhanced search form handling with email functionality
-        document.querySelector('.search-form').addEventListener('submit', function(e) {
+        // Form submit with EmailJS
+        document.querySelector('.search-form').addEventListener('submit', function (e) {
             e.preventDefault();
-            
-            // Get form values
+
             const pickupLocation = document.getElementById('pickup-location').value;
             const pickupDate = document.getElementById('pickup-date').value;
             const returnDate = document.getElementById('return-date').value;
@@ -1309,179 +1752,160 @@
             const customerName = document.getElementById('customer-name').value;
             const customerEmail = document.getElementById('customer-email').value;
             const customerPhone = document.getElementById('customer-phone').value;
-            
-            // Validate required fields
+
             if (!pickupLocation || !pickupDate || !returnDate || !customerName || !customerEmail || !customerPhone) {
                 showNotification('Please complete all fields to submit your vehicle request', 'warning');
                 return;
             }
-            
-            // Validate email format
+
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             if (!emailRegex.test(customerEmail)) {
                 showNotification('Please enter a valid email address', 'error');
                 return;
             }
-            
-            // Validate date logic
+
             if (new Date(returnDate) <= new Date(pickupDate)) {
                 showNotification('Return date must be after pickup date', 'error');
                 return;
             }
-            
+
             const days = Math.ceil((new Date(returnDate) - new Date(pickupDate)) / (1000 * 60 * 60 * 24));
-            
-            // Show loading state
+
             const searchBtn = document.getElementById('search-btn');
             const btnText = searchBtn.querySelector('.btn-text');
             const btnLoading = searchBtn.querySelector('.btn-loading');
-            
+
             btnText.style.display = 'none';
             btnLoading.style.display = 'inline';
             searchBtn.disabled = true;
-            
-            // Prepare email data
+
             const emailData = {
                 to_email: EMAIL_CONFIG.recipientEmail,
                 customer_name: customerName,
                 customer_email: customerEmail,
                 customer_phone: customerPhone,
-                pickup_location: pickupLocation.replace('-', ' '),
-                pickup_date: new Date(pickupDate).toLocaleDateString('en-AU', { 
-                    weekday: 'long', 
-                    year: 'numeric', 
-                    month: 'long', 
-                    day: 'numeric' 
+                pickup_location: pickupLocation,
+                pickup_date: new Date(pickupDate).toLocaleDateString('en-AU', {
+                    weekday: 'long',
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric'
                 }),
-                return_date: new Date(returnDate).toLocaleDateString('en-AU', { 
-                    weekday: 'long', 
-                    year: 'numeric', 
-                    month: 'long', 
-                    day: 'numeric' 
+                return_date: new Date(returnDate).toLocaleDateString('en-AU', {
+                    weekday: 'long',
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric'
                 }),
                 pickup_time: pickupTime,
                 duration: `${days} day${days > 1 ? 's' : ''}`,
-                message: `Vehicle rental inquiry for ${days} day${days > 1 ? 's' : ''} from ${pickupLocation.replace('-', ' ')}`
+                message: `Vehicle rental inquiry for ${days} day${days > 1 ? 's' : ''} from ${pickupLocation}`
             };
-            
-            // Send email using EmailJS
+
             emailjs.send(EMAIL_CONFIG.serviceId, EMAIL_CONFIG.templateId, emailData)
-                .then(function(response) {
-                    console.log('Email sent successfully:', response);
-                    
-                    // Reset button state
+                .then(function () {
                     btnText.style.display = 'inline';
                     btnLoading.style.display = 'none';
                     searchBtn.disabled = false;
-                    
-                    // Show success message
-                    showNotification('🎉 Vehicle request sent successfully! We\'ll contact you within 2 hours.', 'success');
-                    
-                    // Create success modal
+
+                    showNotification('🎉 Vehicle request sent successfully! We will contact you within 2 hours.', 'success');
+
                     createSuccessModal(customerName, emailData);
-                    
-                    // Reset form
+
                     setTimeout(() => {
                         document.querySelector('.search-form').reset();
                         document.getElementById('pickup-time').value = '10:00';
                     }, 2000);
-                    
-                }, function(error) {
+
+                }, function (error) {
                     console.error('Email sending failed:', error);
-                    
-                    // Reset button state
+
                     btnText.style.display = 'inline';
                     btnLoading.style.display = 'none';
                     searchBtn.disabled = false;
-                    
-                    // Show error message with fallback
+
                     showNotification('Unable to send email. Please call +61 430 410 450 directly.', 'error');
-                    
-                    // Create fallback contact modal
+
                     createFallbackModal(customerName, emailData);
                 });
         });
-        
-        // Create success modal
+
+        // Success modal
         function createSuccessModal(customerName, requestData) {
             const modal = createModal();
             const content = modal.querySelector('.modal-content');
-            
+
             content.innerHTML = `
                 <div style="text-align: center;">
                     <div style="font-size: 4rem; margin-bottom: 1rem;">✅</div>
-                    <h3 style="font-size: 2rem; margin-bottom: 1rem; background: linear-gradient(135deg, #10b981, #14b8a6); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Request Sent Successfully!</h3>
-                    <p style="margin-bottom: 1.5rem; color: #94a3b8;">Hi ${customerName}, your vehicle request has been sent to our team.</p>
-                    
-                    <div style="background: rgba(16, 185, 129, 0.1); padding: 1.5rem; border-radius: 16px; margin-bottom: 2rem; border: 1px solid rgba(16, 185, 129, 0.2);">
-                        <h4 style="color: #10b981; margin-bottom: 1rem;">📋 Request Summary</h4>
+                    <h3 style="font-size: 2rem; margin-bottom: 1rem; background: var(--gradient-1); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Request Sent Successfully</h3>
+                    <p style="margin-bottom: 1.5rem; color: #374151;">Hi ${customerName}, your vehicle request has been sent to our team.</p>
+
+                    <div style="background: rgba(37, 99, 235, 0.06); padding: 1.5rem; border-radius: 16px; margin-bottom: 2rem; border: 1px solid rgba(37, 99, 235, 0.25); text-align:left;">
+                        <h4 style="color: #1d4ed8; margin-bottom: 1rem;">📋 Request Summary</h4>
                         <p><strong>Location:</strong> ${requestData.pickup_location}</p>
                         <p><strong>Duration:</strong> ${requestData.duration}</p>
                         <p><strong>Pickup:</strong> ${requestData.pickup_date} at ${requestData.pickup_time}</p>
                         <p><strong>Return:</strong> ${requestData.return_date}</p>
                     </div>
-                    
-                    <div style="background: rgba(99, 102, 241, 0.1); padding: 1.5rem; border-radius: 16px; margin-bottom: 2rem; border: 1px solid rgba(99, 102, 241, 0.2);">
-                        <h4 style="color: #6366f1; margin-bottom: 0.5rem;">⏰ What's Next?</h4>
-                        <p style="color: #94a3b8;">Our team will contact you within 2 hours with available vehicles and pricing.</p>
-                    </div>
-                    
+
+                    <p style="color:#4b5563; margin-bottom:2rem;">We’ll review availability and contact you within 2 hours with vehicles and pricing.</p>
+
                     <button onclick="this.closest('.modal').remove()" style="
-                        background: linear-gradient(135deg, #10b981, #14b8a6);
+                        background: var(--gradient-1);
                         color: white;
                         border: none;
-                        padding: 1rem 2rem;
+                        padding: 1rem 2.5rem;
                         border-radius: 50px;
                         font-weight: 600;
                         cursor: pointer;
                         transition: all 0.3s ease;
-                    ">Perfect! Close</button>
+                    ">Close</button>
                 </div>
             `;
         }
-        
-        // Create fallback contact modal
+
+        // Fallback modal
         function createFallbackModal(customerName, requestData) {
             const modal = createModal();
             const content = modal.querySelector('.modal-content');
-            
+
             content.innerHTML = `
                 <div style="text-align: center;">
                     <div style="font-size: 4rem; margin-bottom: 1rem;">📞</div>
-                    <h3 style="font-size: 2rem; margin-bottom: 1rem; background: linear-gradient(135deg, #f59e0b, #f97316); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Let's Connect Directly</h3>
-                    <p style="margin-bottom: 1.5rem; color: #94a3b8;">Hi ${customerName}, let's get your vehicle request sorted right away!</p>
-                    
-                    <div style="background: rgba(245, 158, 11, 0.1); padding: 1.5rem; border-radius: 16px; margin-bottom: 2rem; border: 1px solid rgba(245, 158, 11, 0.2);">
-                        <h4 style="color: #f59e0b; margin-bottom: 1rem;">📋 Your Request Details</h4>
+                    <h3 style="font-size: 2rem; margin-bottom: 1rem; background: var(--gradient-1); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Let’s Finalise Your Booking</h3>
+                    <p style="margin-bottom: 1.5rem; color: #374151;">Hi ${customerName}, please contact us directly so we can confirm your vehicle.</p>
+
+                    <div style="background: rgba(37, 99, 235, 0.06); padding: 1.5rem; border-radius: 16px; margin-bottom: 2rem; border: 1px solid rgba(37, 99, 235, 0.25); text-align:left;">
+                        <h4 style="color: #1d4ed8; margin-bottom: 1rem;">📋 Your Request Details</h4>
                         <p><strong>Location:</strong> ${requestData.pickup_location}</p>
                         <p><strong>Duration:</strong> ${requestData.duration}</p>
                         <p><strong>Pickup:</strong> ${requestData.pickup_date} at ${requestData.pickup_time}</p>
-                        <p><strong>Email:</strong> ${requestData.customer_email}</p>
-                        <p><strong>Phone:</strong> ${requestData.customer_phone}</p>
+                        <p><strong>Email:</strong> ${requestData.customer_email || ''}</p>
+                        <p><strong>Phone:</strong> ${requestData.customer_phone || ''}</p>
                     </div>
-                    
-                    <div style="background: rgba(99, 102, 241, 0.1); padding: 1.5rem; border-radius: 16px; margin-bottom: 2rem; border: 1px solid rgba(99, 102, 241, 0.2);">
-                        <h4 style="color: #6366f1; margin-bottom: 0.5rem;">📞 Call Us Now</h4>
-                        <p style="font-size: 1.5rem; font-weight: bold; color: #6366f1; margin-bottom: 0.5rem;">+61 430 410 450</p>
-                        <p style="color: #94a3b8;">Available 7 days a week for instant quotes</p>
+
+                    <div style="margin-bottom: 2rem;">
+                        <p style="font-size: 1.1rem; color:#111827; margin-bottom:0.5rem;">📞 Call us now:</p>
+                        <p style="font-size: 1.6rem; font-weight: bold; color: #1d4ed8;">+61 430 410 450</p>
                     </div>
-                    
-                    <div style="display: flex; gap: 1rem; justify-content: center;">
+
+                    <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap:wrap;">
                         <button onclick="window.open('tel:+61430410450')" style="
-                            background: linear-gradient(135deg, #10b981, #14b8a6);
+                            background: var(--gradient-1);
                             color: white;
                             border: none;
-                            padding: 1rem 2rem;
+                            padding: 1rem 2.5rem;
                             border-radius: 50px;
                             font-weight: 600;
                             cursor: pointer;
                             transition: all 0.3s ease;
                         ">📞 Call Now</button>
                         <button onclick="this.closest('.modal').remove()" style="
-                            background: rgba(255, 255, 255, 0.1);
-                            color: white;
-                            border: 1px solid rgba(255, 255, 255, 0.2);
-                            padding: 1rem 2rem;
+                            background: #ffffff;
+                            color: #111827;
+                            border: 1px solid #d1d5db;
+                            padding: 1rem 2.5rem;
                             border-radius: 50px;
                             font-weight: 600;
                             cursor: pointer;
@@ -1491,8 +1915,8 @@
                 </div>
             `;
         }
-        
-        // Helper function to create modal
+
+        // Base modal
         function createModal() {
             const modal = document.createElement('div');
             modal.className = 'modal';
@@ -1502,8 +1926,8 @@
                 left: 0;
                 width: 100%;
                 height: 100%;
-                background: rgba(0, 0, 0, 0.8);
-                backdrop-filter: blur(10px);
+                background: rgba(0, 0, 0, 0.55);
+                backdrop-filter: blur(8px);
                 display: flex;
                 align-items: center;
                 justify-content: center;
@@ -1511,167 +1935,124 @@
                 opacity: 0;
                 transition: opacity 0.3s ease;
             `;
-            
+
             const content = document.createElement('div');
             content.className = 'modal-content';
             content.style.cssText = `
-                background: linear-gradient(135deg, #1e293b, #334155);
+                background: #ffffff;
                 padding: 3rem;
                 border-radius: 24px;
-                border: 1px solid rgba(255, 255, 255, 0.2);
+                border: 1px solid #e5e7eb;
                 max-width: 600px;
                 width: 90%;
-                color: white;
-                transform: scale(0.8);
+                color: #111827;
+                transform: scale(0.85);
                 transition: transform 0.3s ease;
                 max-height: 80vh;
                 overflow-y: auto;
             `;
-            
+
             modal.appendChild(content);
             document.body.appendChild(modal);
-            
-            // Animate in
+
             setTimeout(() => {
                 modal.style.opacity = '1';
                 content.style.transform = 'scale(1)';
             }, 10);
-            
-            return modal;
-        }
 
-        // Enhanced category filtering with animations
-        document.querySelectorAll('.category-card').forEach(card => {
-            card.addEventListener('click', function() {
-                // Remove active class from all cards
-                document.querySelectorAll('.category-card').forEach(c => {
-                    c.classList.remove('active');
-                    c.style.transform = 'scale(1)';
-                });
-                
-                // Add active class to clicked card
-                this.classList.add('active');
-                this.style.transform = 'scale(1.05)';
-                
-                const category = this.dataset.category;
-                showNotification(`✨ Filtering premium ${category.charAt(0).toUpperCase() + category.slice(1)} vehicles`, 'info');
-                
-                // Animate car cards
-                const carCards = document.querySelectorAll('.car-card');
-                carCards.forEach((card, index) => {
-                    card.style.opacity = '0.3';
-                    card.style.transform = 'scale(0.95)';
-                    
-                    setTimeout(() => {
-                        card.style.opacity = '1';
-                        card.style.transform = 'scale(1)';
-                    }, index * 100);
-                });
-            });
-        });
-
-        // Enhanced booking function
-        function bookCar(carModel) {
-            const pickupDate = document.getElementById('pickup-date').value;
-            const returnDate = document.getElementById('return-date').value;
-            
-            if (!pickupDate || !returnDate) {
-                showNotification(`${carModel} selected! Complete the search form to check availability`, 'warning');
-                document.getElementById('pickup-date').focus();
-                return;
-            }
-            
-            const days = Math.ceil((new Date(returnDate) - new Date(pickupDate)) / (1000 * 60 * 60 * 24));
-            const prices = {
-                'Honda Civic': 55,
-                'Toyota Corolla': 45,
-                'Ford Kuga': 75,
-                'Audi Q7': 120,
-                'BMW 3 Series': 95,
-                'Ford Mustang': 85
-            };
-            const total = prices[carModel] * days;
-            
-            // Create booking modal effect
-            const modal = document.createElement('div');
-            modal.style.cssText = `
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background: rgba(0, 0, 0, 0.8);
-                backdrop-filter: blur(10px);
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                z-index: 10000;
-                opacity: 0;
-                transition: opacity 0.3s ease;
-            `;
-            
-            const content = document.createElement('div');
-            content.style.cssText = `
-                background: linear-gradient(135deg, #1e293b, #334155);
-                padding: 3rem;
-                border-radius: 24px;
-                border: 1px solid rgba(255, 255, 255, 0.2);
-                text-align: center;
-                max-width: 500px;
-                width: 90%;
-                color: white;
-                transform: scale(0.8);
-                transition: transform 0.3s ease;
-            `;
-            
-            content.innerHTML = `
-                <h3 style="font-size: 2rem; margin-bottom: 1rem; background: linear-gradient(135deg, #6366f1, #ec4899); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">🚗 ${carModel}</h3>
-                <p style="margin-bottom: 1.5rem; color: #94a3b8;">Premium Rental Details</p>
-                <div style="background: rgba(255, 255, 255, 0.1); padding: 1.5rem; border-radius: 16px; margin-bottom: 2rem;">
-                    <p><strong>Duration:</strong> ${days} day${days > 1 ? 's' : ''}</p>
-                    <p><strong>Daily Rate:</strong> ${prices[carModel]}</p>
-                    <p style="font-size: 1.5rem; font-weight: bold; color: #6366f1;"><strong>Total:</strong> ${total}</p>
-                </div>
-                <button onclick="this.parentElement.parentElement.remove()" style="
-                    background: linear-gradient(135deg, #6366f1, #8b5cf6);
-                    color: white;
-                    border: none;
-                    padding: 1rem 2rem;
-                    border-radius: 50px;
-                    font-weight: 600;
-                    cursor: pointer;
-                    transition: all 0.3s ease;
-                ">Reserve Now - Call +61 430 410 450</button>
-            `;
-            
-            modal.appendChild(content);
-            document.body.appendChild(modal);
-            
-            // Animate in
-            setTimeout(() => {
-                modal.style.opacity = '1';
-                content.style.transform = 'scale(1)';
-            }, 10);
-            
-            // Auto close after 10 seconds
-            setTimeout(() => {
-                if (document.body.contains(modal)) {
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
                     modal.style.opacity = '0';
                     setTimeout(() => modal.remove(), 300);
                 }
-            }, 10000);
+            });
+
+            return modal;
         }
 
-        // Notification system
+        // Fleet image galleries
+        const fleetGalleries = {
+            'van-18t': [
+                'images/WhatsApp Image 2025-11-28 at 11.10.24 AM.jpeg',
+                'images/WhatsApp Image 2025-11-28 at 11.10.24 AM (1).jpeg',
+                'images/WhatsApp Image 2025-11-28 at 11.10.23 AM.jpeg',
+                'images/WhatsApp Image 2025-11-28 at 11.10.23 AM (1).jpeg'
+            ],
+            'audi-q7': [
+                'images/audi-q7.jpg'
+            ],
+            'bmw-3': [
+                'images/bmw-3-series.jpg'
+            ],
+            'civic': [
+                'images/Honda-Civic.jpg'
+            ],
+            'corolla': [
+                'images/toyota-corolla.jpg'
+            ],
+            'kuga': [
+                'images/ford-kuga.jpg'
+            ],
+            'truck-fridge': [
+                'images/Trucks.jpg'
+            ]
+        };
+
+        function openFleetGallery(key) {
+            const images = fleetGalleries[key];
+            if (!images || !images.length) return;
+
+            const modal = createModal();
+            const content = modal.querySelector('.modal-content');
+
+            const thumbs = images.map((src, i) => `
+                <img src="${src}" data-index="${i}"
+                     style="width:80px;height:60px;object-fit:cover;border-radius:8px;cursor:pointer;border:1px solid #e5e7eb;">
+            `).join('');
+
+            content.innerHTML = `
+                <div>
+                    <h3 style="font-size:1.6rem;margin-bottom:1rem;color:#111827;">Fleet photos</h3>
+                    <div style="border-radius:18px;overflow:hidden;border:1px solid #e5e7eb;margin-bottom:1rem;">
+                        <img id="fleet-main-img" src="${images[0]}"
+                             style="width:100%;max-height:380px;object-fit:cover;">
+                    </div>
+                    <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:1.5rem;">
+                        ${thumbs}
+                    </div>
+                    <button onclick="this.closest('.modal').remove()" style="
+                        background: var(--gradient-1);
+                        color:#fff;border:none;padding:0.8rem 2rem;
+                        border-radius:999px;font-weight:600;cursor:pointer;">
+                        Close
+                    </button>
+                </div>
+            `;
+
+            content.querySelectorAll('img[data-index]').forEach(img => {
+                img.addEventListener('click', () => {
+                    const idx = img.getAttribute('data-index');
+                    content.querySelector('#fleet-main-img').src = images[idx];
+                });
+            });
+        }
+
+        // "Call to reserve" helper
+        function callToReserve(carModel) {
+            showNotification(`Calling to reserve: ${carModel}`, 'info');
+            window.location.href = 'tel:+61430410450';
+        }
+
+        // Notification system – blue & black palette
         function showNotification(message, type = 'info') {
             const notification = document.createElement('div');
             const colors = {
-                success: '#10b981',
-                error: '#ef4444',
-                warning: '#f59e0b',
-                info: '#6366f1'
+                success: '#1d4ed8',
+                error: '#0f172a',
+                warning: '#1d4ed8',
+                info: '#1d4ed8'
             };
-            
+
             notification.style.cssText = `
                 position: fixed;
                 top: 2rem;
@@ -1680,21 +2061,21 @@
                 color: white;
                 padding: 1rem 2rem;
                 border-radius: 50px;
-                box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+                box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
                 z-index: 10000;
                 transform: translateX(400px);
                 transition: transform 0.3s ease;
                 font-weight: 600;
                 backdrop-filter: blur(10px);
             `;
-            
+
             notification.textContent = message;
             document.body.appendChild(notification);
-            
+
             setTimeout(() => {
                 notification.style.transform = 'translateX(0)';
             }, 100);
-            
+
             setTimeout(() => {
                 notification.style.transform = 'translateX(400px)';
                 setTimeout(() => notification.remove(), 300);
@@ -1704,57 +2085,128 @@
         // Smooth scrolling for navigation
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (!href || href === '#') return;
+                const target = document.querySelector(href);
+                if (!target) return;
+
                 e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            });
+        });
+
+        // Highlight active menu item on scroll
+        const sections = document.querySelectorAll("section[id]");
+        const navLinks = document.querySelectorAll(".nav-links a");
+
+        window.addEventListener("scroll", () => {
+            let current = "";
+
+            sections.forEach(sec => {
+                const secTop = sec.offsetTop - 120;
+                if (window.scrollY >= secTop) {
+                    current = sec.getAttribute("id");
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove("active");
+                if (current && link.getAttribute("href") === "#" + current) {
+                    link.classList.add("active");
                 }
             });
         });
 
-        // Add some interactive cursor effects
+        // Fancy cursor (optional visual effect)
         document.addEventListener('mousemove', (e) => {
-            const cursor = document.querySelector('.cursor');
+            let cursor = document.querySelector('.cursor');
             if (!cursor) {
-                const newCursor = document.createElement('div');
-                newCursor.className = 'cursor';
-                newCursor.style.cssText = `
+                cursor = document.createElement('div');
+                cursor.className = 'cursor';
+                cursor.style.cssText = `
                     position: fixed;
                     width: 20px;
                     height: 20px;
-                    background: linear-gradient(135deg, #6366f1, #ec4899);
+                    background: var(--gradient-1);
                     border-radius: 50%;
                     pointer-events: none;
                     z-index: 9999;
                     mix-blend-mode: difference;
                     transition: transform 0.1s ease;
                 `;
-                document.body.appendChild(newCursor);
+                document.body.appendChild(cursor);
             }
-            
-            document.querySelector('.cursor').style.left = e.clientX - 10 + 'px';
-            document.querySelector('.cursor').style.top = e.clientY - 10 + 'px';
+
+            cursor.style.left = e.clientX - 10 + 'px';
+            cursor.style.top = e.clientY - 10 + 'px';
         });
 
-        // Initialize animations on load
-        window.addEventListener('load', () => {
-            // Add stagger animation to car cards
-            const carCards = document.querySelectorAll('.car-card');
-            carCards.forEach((card, index) => {
-                card.style.animationDelay = `${index * 0.1}s`;
+        // Fleet filters
+        const filterButtons = document.querySelectorAll('.category-card');
+        const carCards = document.querySelectorAll('.car-card');
+
+        filterButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const category = btn.getAttribute('data-category');
+
+                filterButtons.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                carCards.forEach(card => {
+                    const cardCats = card.getAttribute('data-category').split(' ');
+                    if (category === 'all' || cardCats.includes(category)) {
+                        card.style.display = 'flex';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
             });
-            
-            // Welcome message
+        });
+
+        // Initial animations on load
+        window.addEventListener('load', () => {
+            const cards = document.querySelectorAll('.car-card');
+            cards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                setTimeout(() => {
+                    card.style.transition = 'all 0.6s ease';
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, index * 120);
+            });
+
             setTimeout(() => {
-                showNotification('🎉 Welcome to Sunbury Rentals Premium Experience!', 'success');
-            }, 1000);
+                showNotification('🎉 Welcome to Sunbury Rentals', 'success');
+            }, 800);
         });
     </script>
+
+    <!-- Floating Actions -->
+    <div class="floating-actions">
+        <a href="https://wa.me/61430410450?text=Hi%20Sunbury%20Rentals,%20I%27d%20like%20to%20enquire%20about%20a%20car."
+           class="floating-btn floating-whatsapp"
+           target="_blank" aria-label="Chat on WhatsApp">
+            💬
+        </a>
+        <a href="tel:+61430410450"
+           class="floating-btn floating-call"
+           aria-label="Call Sunbury Rentals">
+            📞
+        </a>
+    </div>
+
+    <!-- Mobile sticky bottom bar -->
+    <div class="mobile-bar">
+        <div class="mobile-bar-inner">
+            <a href="tel:+61430410450" class="mobile-call">📞 Call</a>
+            <a href="#fleet" class="mobile-book">🚗 View Cars</a>
+            <a href="#contact" class="mobile-whatsapp">✉️ Contact</a>
+        </div>
+    </div>
+
 </body>
 </html>
-
-                        
-
